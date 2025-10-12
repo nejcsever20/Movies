@@ -1,0 +1,56 @@
+﻿@page
+@model Movies.Pages.Movie.GenresModel
+@{
+    ViewData["Title"] = "Genres";
+}
+
+<div class="container mt-4">
+    <h2>Genres</h2>
+
+    @if (Model.IsAdmin)
+    {
+        <div class="mb-3">
+            <a asp-page="/Admin/CreateGenre" class="btn btn-success">Create Genre</a>
+        </div>
+    }
+
+    @if (!Model.Genres.Any())
+    {
+        <div class="alert alert-info">No genres found.</div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+            @foreach (var genre in Model.Genres)
+            {
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">@genre.Name</h5>
+                            @if (genre.MovieGenres.Any())
+                            {
+                                <p class="card-text">
+                                    Movies:
+                                    <ul>
+                                        @foreach (var mg in genre.MovieGenres)
+                                        {
+                                            <li>
+                                                <a asp-page="/Movie/Details" asp-route-id="@mg.Movie.MovieId">
+                                                    @mg.Movie.Title
+                                                </a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </p>
+                            }
+                            else
+                            {
+                                <p class="card-text text-muted">No movies in this genre.</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

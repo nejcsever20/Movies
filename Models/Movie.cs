@@ -14,9 +14,10 @@ namespace Movies.Models
         public int? DirectorId { get; set; }
         public string? PosterUrl { get; set; }
         public DateTime CreatedAt { get; set; }
+        public string? ImagePath { get; set; }
 
         public Director Director { get; set; }
-        public ICollection<MovieGenre> MovieGenres { get; set; }
+        public ICollection<MovieGenre> MovieGenres { get; set; } = new List<MovieGenre>();
         public ICollection<MovieActor> MovieActors { get; set; }
         public ICollection<Review> Reviews { get; set; }
         public ICollection<Rating> Ratings { get; set; }

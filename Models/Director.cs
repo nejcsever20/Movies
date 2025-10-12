@@ -11,6 +11,6 @@ namespace Movies.Models
         public DateTime? BirthDate { get; set; }
         public string? ProfileImageUrl { get; set; }
 
-        public ICollection<Movie> Movies { get; set; }
+        public ICollection<Movie> Movies { get; set; } = new List<Movie>();
     }
 }

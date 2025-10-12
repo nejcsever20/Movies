@@ -1,8 +1,12 @@
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Movies.Data;
+using OfficeOpenXml; // EPPlus
 
 var builder = WebApplication.CreateBuilder(args);
+
+ExcelPackage.License.SetNonCommercialOrganization("My Noncommercial Organization");
+
 
 // Get SQLite connection string
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
@@ -36,9 +40,9 @@ using (var scope = app.Services.CreateScope())
             await roleManager.CreateAsync(new IdentityRole(role));
     }
 
-    // Create default admin user
+    // Create default admin user (change credentials for production)
     string adminEmail = "admin@example.com";
-    string adminPassword = "Admin123!"; // Change for production
+    string adminPassword = "Admin123!";
 
     var adminUser = await userManager.FindByEmailAsync(adminEmail);
     if (adminUser == null)
@@ -57,7 +61,7 @@ using (var scope = app.Services.CreateScope())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
-app.UseAuthentication(); // <- Added for Identity
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();

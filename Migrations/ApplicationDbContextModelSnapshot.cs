@@ -347,6 +347,9 @@ namespace Movies.Migrations
                     b.Property<int?>("DirectorId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("ImagePath")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("PosterUrl")
                         .HasColumnType("TEXT");
 

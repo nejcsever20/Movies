@@ -4,45 +4,75 @@
     ViewData["Title"] = "Create Movie";
 }
 
-<h2>Create Movie</h2>
+<div class="container mt-4">
+    <h2>Create Movie</h2>
 
-<form method="post">
-    <div class="mb-3">
-        <label class="form-label">Title</label>
-        <input asp-for="NewMovie.Title" class="form-control" required />
-    </div>
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input asp-for="NewMovie.Title" class="form-control" required />
+            <span asp-validation-for="NewMovie.Title" class="text-danger"></span>
+        </div>
 
-    <div class="mb-3">
-        <label class="form-label">Director</label>
-        <select asp-for="NewMovie.DirectorId" class="form-select" required>
-            <option value="">-- Select Director --</option>
-            @foreach (var director in Model.Directors)
-            {
-                <option value="@director.DirectorId">@director.Name</option>
-            }
-        </select>
-    </div>
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea asp-for="NewMovie.Description" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="NewMovie.Description" class="text-danger"></span>
+        </div>
 
-    <div class="mb-3">
-        <label class="form-label">Genre</label>
-        <select asp-for"NewMovie.GenreId" class="form-select" required>
-            <option value="">-- Select Genre --</option>
-            @foreach(var genre in Model.Genres)
-            {
-                <option value="@genre.GenreId">@genre.Name</option>
-            }
-        </select>
-    </div>
+        <div class="mb-3">
+            <label class="form-label">Release Date</label>
+            <input asp-for="NewMovie.ReleaseDate" type="date" class="form-control" required />
+            <span asp-validation-for="NewMovie.ReleaseDate" class="text-danger"></span>
+        </div>
 
-    <div class="mb-3">
-        <label class="form-label">Release Date</label>
-        <input asp-for="NewMovie.ReleaseDate" type="date" class="form-control" required />
-    </div>
+        <div class="mb-3">
+            <label class="form-label">Runtime (Minutes)</label>
+            <input asp-for="NewMovie.RuntimeMinutes" type="number" class="form-control" required />
+            <span asp-validation-for="NewMovie.RuntimeMinutes" class="text-danger"></span>
+        </div>
 
-    <div class="mb-3">
-        <label class="form-label">Description</label>
-        <textarea asp-for="NewMovie.Description" class="form-control" rows="4"></textarea>
-    </div>
+        <div class="mb-3">
+            <label class="form-label">Director</label>
+            <select asp-for="NewMovie.DirectorId" class="form-select" required>
+                <option value="">-- Select Director --</option>
+                @foreach (var director in Model.Directors)
+                {
+                    <option value="@director.DirectorId">@director.Name</option>
+                }
+            </select>
+            <span asp-validation-for="NewMovie.DirectorId" class="text-danger"></span>
+        </div>
 
-    <button type="submit" class="btn btn-primary">Create Movie</button>
-</form>
+        <div class="mb-3">
+            <label class="form-label">Genre</label>
+            <select asp-for="SelectedGenreId" class="form-select" required>
+                <option value="">-- Select Genre --</option>
+                @foreach (var genre in Model.Genres)
+                {
+                    <option value="@genre.GenreId">@genre.Name</option>
+                }
+            </select>
+            <span asp-validation-for="SelectedGenreId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Created At</label>
+            <input asp-for="NewMovie.CreatedAt" type="date" class="form-control" required />
+            <span asp-validation-for="NewMovie.CreatedAt" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Movie Image</label>
+            <input asp-for="ImageFile" type="file" class="form-control" />
+            <span asp-validation-for="ImageFile" class="text-danger"></span>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Create Movie</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,28 @@
+﻿@page
+@model Movies.Pages.Admin.CreateGenreModel
+@{
+    ViewData["Title"] = "Create Genre";
+}
+
+<div class="container mt-4">
+    <h2>Create Genre</h2>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="NewGenre.Name" class="form-label">Genre Name</label>
+            <input asp-for="NewGenre.Name" class="form-control" />
+            <span asp-validation-for="NewGenre.Name" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create Genre</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

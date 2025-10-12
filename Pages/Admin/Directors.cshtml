@@ -1,0 +1,87 @@
+﻿@page
+@model Movies.Pages.Admin.DirectorsModel
+@{
+    ViewData["Title"] = "Directors";
+}
+
+<div class="container mt-4">
+    <h2>Directors</h2>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+
+    <div class="mb-4">
+        <h4>Add New Director</h4>
+        <form method="post">
+            <div class="mb-3">
+                <label asp-for="NewDirector.Name" class="form-label">Director Name</label>
+                <input asp-for="NewDirector.Name" class="form-control" />
+                <span asp-validation-for="NewDirector.Name" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Director</button>
+        </form>
+    </div>
+
+    <div class="mb-4">
+        <h4>Import Directors from Excel</h4>
+        <form method="post" enctype="multipart/form-data" asp-page-handler="Import">
+            <div class="mb-3">
+                <input type="file" asp-for="ImportFile" class="form-control" accept=".xlsx" />
+            </div>
+            <button type="submit" class="btn btn-success">Import</button>
+        </form>
+        <small class="text-muted">Excel must have a single column "Name" with director names, starting from row 2.</small>
+    </div>
+
+    <h4>All Directors</h4>
+    @if (!Model.Directors.Any())
+    {
+        <div class="alert alert-info">No directors found.</div>
+    }
+    else
+    {
+        <ul class="list-group mb-3">
+            @foreach (var director in Model.Directors)
+            {
+                <li class="list-group-item">@director.Name</li>
+            }
+        </ul>
+
+        <!-- Pagination -->
+        <nav>
+            <ul class="pagination">
+                @if (Model.PageNumber > 1)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-route-PageNumber="@(Model.PageNumber - 1)">Previous</a>
+                    </li>
+                }
+
+                @for (int i = 1; i <= Model.TotalPages; i++)
+                {
+                    <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                        <a class="page-link" asp-route-PageNumber="@i">@i</a>
+                    </li>
+                }
+
+                @if (Model.PageNumber < Model.TotalPages)
+                {
+                    <li class="page-item">
+                        <a class="page-link" asp-route-PageNumber="@(Model.PageNumber + 1)">Next</a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    }
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

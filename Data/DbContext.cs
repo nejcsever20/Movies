@@ -26,6 +26,10 @@ namespace Movies.Data
         public DbSet<Watchlist> Watchlists { get; set; }
         public DbSet<Photo> Photos { get; set; }
 
+        public DbSet<Movies.Models.Friendship> Friendships { get; set; }
+        public DbSet<Message> Messages { get; set; }
+
+        public DbSet<Notification> Notifications { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

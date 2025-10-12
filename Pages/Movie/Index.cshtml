@@ -1,0 +1,61 @@
+﻿@page
+@model Movies.Pages.Movie.IndexModel
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<IdentityUser> SignInManager
+
+@{
+    ViewData["Title"] = "Movies";
+    bool isAdmin = false;
+
+    if (SignInManager.IsSignedIn(User))
+    {
+        var currentUser = UserManager.GetUserAsync(User).Result;
+        if (currentUser != null)
+        {
+            isAdmin = UserManager.IsInRoleAsync(currentUser, "Admin").Result;
+        }
+    }
+}
+
+<div class="container mt-4">
+    <h2 class="mb-3">Movies</h2>
+
+    @* Show "Create Movie" button for admins *@
+    @if (isAdmin)
+    {
+        <div class="mb-3">
+            <a asp-page="/Admin/CreateMovie" class="btn btn-success">Create Movie</a>
+        </div>
+    }
+
+    <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-3">
+        @foreach (var movie in Model.Movies)
+        {
+            <div class="col">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h6 class="card-title">@movie.Title</h6>
+                        <p class="card-text">
+                            Director: @(movie.Director?.Name ?? "Unknown") <br />
+                            Release: @movie.ReleaseDate?.ToString("yyyy")
+                        </p>
+                        <a asp-page="/Movie/Details" asp-route-id="@movie.MovieId" class="btn btn-sm btn-primary w-100">View</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation" class="mt-4">
+        <ul class="pagination justify-content-center">
+            @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                <li class="page-item @(i == Model.PageNumber ? "active" : "")">
+                    <a class="page-link" asp-page="/Movie/Index" asp-route-pageNumber="@i">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+</div>

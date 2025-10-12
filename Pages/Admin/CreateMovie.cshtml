@@ -1,0 +1,48 @@
+﻿@page
+@model Movies.Pages.Admin.CreateMovieModel
+@{
+    ViewData["Title"] = "Create Movie";
+}
+
+<h2>Create Movie</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input asp-for="NewMovie.Title" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Director</label>
+        <select asp-for="NewMovie.DirectorId" class="form-select" required>
+            <option value="">-- Select Director --</option>
+            @foreach (var director in Model.Directors)
+            {
+                <option value="@director.DirectorId">@director.Name</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Genre</label>
+        <select asp-for"NewMovie.GenreId" class="form-select" required>
+            <option value="">-- Select Genre --</option>
+            @foreach(var genre in Model.Genres)
+            {
+                <option value="@genre.GenreId">@genre.Name</option>
+            }
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Release Date</label>
+        <input asp-for="NewMovie.ReleaseDate" type="date" class="form-control" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Description</label>
+        <textarea asp-for="NewMovie.Description" class="form-control" rows="4"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create Movie</button>
+</form>

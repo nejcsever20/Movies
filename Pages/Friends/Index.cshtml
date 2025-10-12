@@ -1,0 +1,121 @@
+﻿@page
+@model Movies.Pages.Friends.IndexModel
+@{
+    ViewData["Title"] = "Friends";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- LEFT SIDEBAR -->
+        <div class="col-md-3 border-end" style="height: 80vh; overflow-y: auto;">
+            <h5 class="mt-3">My Friends (@Model.FriendCount)</h5>
+            <ul class="list-group list-group-flush">
+                @foreach (var friend in Model.MyFriends)
+                {
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>@Model.FormatUserName(friend.UserName)</span>
+                        <a asp-page="/Friends/Chat" asp-route-friendId="@friend.Id" class="btn btn-sm btn-primary">Chat</a>
+                    </li>
+                }
+            </ul>
+
+            <hr />
+            <h6>Followers (@Model.FollowerCount)</h6>
+            <ul class="list-group list-group-flush">
+                @foreach (var follower in Model.Followers)
+                {
+                    <li class="list-group-item">@Model.FormatUserName(follower.UserName)</li>
+                }
+            </ul>
+
+            <hr />
+            <h6>Following (@Model.FollowingCount)</h6>
+            <ul class="list-group list-group-flush">
+                @foreach (var following in Model.Following)
+                {
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <span>@Model.FormatUserName(following.UserName)</span>
+                        <form method="post" asp-page-handler="UnfollowUser">
+                            <input type="hidden" name="userId" value="@following.Id" />
+                            <button type="submit" class="btn btn-sm btn-outline-secondary">Unfollow</button>
+                        </form>
+                    </li>
+                }
+            </ul>
+
+            <hr />
+            <h6>Blocked (@Model.BlockedCount)</h6>
+            <ul class="list-group list-group-flush">
+                @foreach (var blocked in Model.BlockedUsers)
+                {
+                    <li class="list-group-item d-flex justify-content-between align-items-center text-danger">
+                        <span>@Model.FormatUserName(blocked.UserName)</span>
+                        <form method="post" asp-page-handler="UnblockUser">
+                            <input type="hidden" name="userId" value="@blocked.Id" />
+                            <button type="submit" class="btn btn-sm btn-outline-success">Unblock</button>
+                        </form>
+                    </li>
+                }
+            </ul>
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="col-md-9" style="height: 80vh; overflow-y: auto;">
+            <div class="d-flex justify-content-between align-items-center mt-3 mb-3">
+                <form method="get" class="w-100 d-flex gap-2">
+                    <input type="text" name="search" value="@Request.Query["search"]" class="form-control" placeholder="Search username or email..." />
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+
+            <div id="userList" class="row row-cols-1 row-cols-md-3 g-3">
+                @foreach (var user in Model.AllUsers)
+                {
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h6 class="card-title">@Model.FormatUserName(user.UserName)</h6>
+
+                                @if (Model.MyFriends.Any(f => f.Id == user.Id))
+                                {
+                                    <!-- Friend -->
+                                    <a asp-page="/Friends/Chat" asp-route-friendId="@user.Id" class="btn btn-sm btn-success w-100">Chat</a>
+                                }
+                                else if (Model.BlockedUsers.Any(f => f.Id == user.Id))
+                                {
+                                    <!-- Blocked -->
+                                    <button class="btn btn-sm btn-danger w-100" disabled>Blocked</button>
+                                }
+                                else if (Model.IsPending(user.Id))
+                                {
+                                    <!-- Pending Friend Request -->
+                                    <button class="btn btn-sm btn-secondary w-100" disabled>Pending</button>
+                                }
+                                else
+                                {
+                                    <!-- Not friend yet -->
+                                    <form method="post" asp-page-handler="AddFriend" class="mb-1">
+                                        <input type="hidden" name="friendId" value="@user.Id" />
+                                        <button type="submit" class="btn btn-sm btn-outline-success w-100">Add Friend</button>
+                                    </form>
+
+                                    <!-- Follow -->
+                                    <form method="post" asp-page-handler="FollowUser" class="mb-1">
+                                        <input type="hidden" name="userId" value="@user.Id" />
+                                        <button type="submit" class="btn btn-sm btn-outline-primary w-100">Follow</button>
+                                    </form>
+
+                                    <!-- Block -->
+                                    <form method="post" asp-page-handler="BlockUser">
+                                        <input type="hidden" name="userId" value="@user.Id" />
+                                        <button type="submit" class="btn btn-sm btn-outline-danger w-100">Block</button>
+                                    </form>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

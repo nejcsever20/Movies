@@ -1,0 +1,43 @@
+﻿@page
+@model Movies.Pages.Friends.RequestsModel
+@{
+    ViewData["Title"] = "Friend Requests";
+}
+
+<div class="container py-4">
+    <h3 class="mb-4">Pending Friend Requests</h3>
+
+    @if (Model.PendingRequests.Count == 0)
+    {
+        <div class="alert alert-info text-center">
+            You have no pending friend requests.
+        </div>
+    }
+    else
+    {
+        <ul class="list-group shadow-sm">
+            @foreach (var req in Model.PendingRequests)
+            {
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong>@req.SenderName</strong> sent you a friend request.
+                    </div>
+                    <div class="btn-group">
+                        <form method="post" asp-page-handler="Accept">
+                            <input type="hidden" name="requestId" value="@req.Id" />
+                            <button type="submit" class="btn btn-success btn-sm">Accept</button>
+                        </form>
+                        <form method="post" asp-page-handler="Decline">
+                            <input type="hidden" name="requestId" value="@req.Id" />
+                            <button type="submit" class="btn btn-outline-danger btn-sm">Decline</button>
+                        </form>
+                    </div>
+                </li>
+            }
+        </ul>
+    }
+
+    <div class="mt-4">
+        <a asp-page="/Friends/Index" class="btn btn-outline-secondary">Back to Friends</a>
+    </div>
+</div>

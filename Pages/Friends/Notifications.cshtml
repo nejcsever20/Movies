@@ -18,7 +18,14 @@
         <ul class="list-group shadow-sm">
             @foreach (var n in Model.Notifications)
             {
-                <li class="list-group-item d-flex justify-content-between align-items-center">
+                var isFriendRequest = n.Type == "Friend Request";
+                <li class="list-group-item d-flex justify-content-between align-items-center notification-item"
+                    data-fromuserid="@n.FromUserId"
+                    data-fromusername="@n.FromUserName"
+                    data-type="@n.Type"
+                    style="cursor:@(isFriendRequest ? "pointer" : "default")"
+                @(isFriendRequest ? "data-bs-toggle=modal data-bs-target=#friendRequestModal" : "")>
+
                     <div>
                         <span class="badge bg-@(n.Type == "Message" ? "primary" : n.Type == "Friend Request" ? "warning" : "success") me-2">
                             @n.Type
@@ -35,3 +42,48 @@
         <a asp-page="/Friends/Index" class="btn btn-outline-secondary">Back to Friends</a>
     </div>
 </div>
+
+<!-- Friend Request Modal -->
+<div class="modal fade" id="friendRequestModal" tabindex="-1" aria-labelledby="friendRequestModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content shadow-lg">
+            <div class="modal-header">
+                <h5 class="modal-title" id="friendRequestModalLabel">Friend Request</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p id="friendRequestText"></p>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <form method="post" asp-page-handler="AcceptRequest" id="acceptForm">
+                    <input type="hidden" name="fromUserId" id="acceptFromUserId" />
+                    <button type="submit" class="btn btn-success">Accept</button>
+                </form>
+                <form method="post" asp-page-handler="DeclineRequest" id="declineForm">
+                    <input type="hidden" name="fromUserId" id="declineFromUserId" />
+                    <button type="submit" class="btn btn-danger">Decline</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // When a notification item is clicked
+        document.querySelectorAll('.notification-item').forEach(item => {
+            item.addEventListener('click', function () {
+                if (this.dataset.type === 'Friend Request') {
+                    const fromUser = this.dataset.fromusername;
+                    const fromUserId = this.dataset.fromuserid;
+
+                    document.getElementById('friendRequestText').textContent =
+                        `${fromUser} sent you a friend request.`;
+
+                    document.getElementById('acceptFromUserId').value = fromUserId;
+                    document.getElementById('declineFromUserId').value = fromUserId;
+                }
+            });
+        });
+    </script>
+}

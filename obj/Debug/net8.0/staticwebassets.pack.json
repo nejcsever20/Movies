@@ -13,6 +13,86 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\actors\\26622bc0-43e5-45dc-bb24-1f387dfcefb3.jpg",
+      "PackagePath": "staticwebassets\\images\\actors\\26622bc0-43e5-45dc-bb24-1f387dfcefb3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\actors\\2c456db8-86a4-4538-abd6-ba559b54f237.webp",
+      "PackagePath": "staticwebassets\\images\\actors\\2c456db8-86a4-4538-abd6-ba559b54f237.webp"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\actors\\3aaf7347-25e8-4221-b0dd-23cac73a8b99.jpg",
+      "PackagePath": "staticwebassets\\images\\actors\\3aaf7347-25e8-4221-b0dd-23cac73a8b99.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\actors\\3d9991a9-6e2a-44bd-be6e-9535d0880f84.jpg",
+      "PackagePath": "staticwebassets\\images\\actors\\3d9991a9-6e2a-44bd-be6e-9535d0880f84.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\actors\\56376ac8-8821-4c5a-bf01-32a3d8579312.png",
+      "PackagePath": "staticwebassets\\images\\actors\\56376ac8-8821-4c5a-bf01-32a3d8579312.png"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\actors\\5c4af799-52fb-4421-b852-5a754fbaa93e.png",
+      "PackagePath": "staticwebassets\\images\\actors\\5c4af799-52fb-4421-b852-5a754fbaa93e.png"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\actors\\61d05a07-a43d-4b5d-921e-e2c46b8f436c.jpg",
+      "PackagePath": "staticwebassets\\images\\actors\\61d05a07-a43d-4b5d-921e-e2c46b8f436c.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\actors\\8111acd8-74f1-404a-ae0e-42c9c9ee02f1.jpg",
+      "PackagePath": "staticwebassets\\images\\actors\\8111acd8-74f1-404a-ae0e-42c9c9ee02f1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\actors\\9158ea12-709a-495e-a4cb-0522d288b7b0.png",
+      "PackagePath": "staticwebassets\\images\\actors\\9158ea12-709a-495e-a4cb-0522d288b7b0.png"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\actors\\a0f159b0-a5af-4ab7-9ab7-cb077948e11c.webp",
+      "PackagePath": "staticwebassets\\images\\actors\\a0f159b0-a5af-4ab7-9ab7-cb077948e11c.webp"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\actors\\b68e9eed-57b2-4e70-8fc6-6624af5aac26.jpg",
+      "PackagePath": "staticwebassets\\images\\actors\\b68e9eed-57b2-4e70-8fc6-6624af5aac26.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\actors\\b77b4203-1ddf-46c1-a660-1fef9c65adbd.jpg",
+      "PackagePath": "staticwebassets\\images\\actors\\b77b4203-1ddf-46c1-a660-1fef9c65adbd.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\actors\\bc7b4a6e-1cc4-4e39-bf42-9f5ee5349b71.png",
+      "PackagePath": "staticwebassets\\images\\actors\\bc7b4a6e-1cc4-4e39-bf42-9f5ee5349b71.png"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\actors\\ca083570-7b44-42a9-b9a2-0bbf5439ab83.jpg",
+      "PackagePath": "staticwebassets\\images\\actors\\ca083570-7b44-42a9-b9a2-0bbf5439ab83.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\actors\\dc8040fb-e2f8-45d9-9b2f-0d98346c2730.jpg",
+      "PackagePath": "staticwebassets\\images\\actors\\dc8040fb-e2f8-45d9-9b2f-0d98346c2730.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\actors\\ef55c075-b665-440f-97cb-0587ec21c6f8.jpg",
+      "PackagePath": "staticwebassets\\images\\actors\\ef55c075-b665-440f-97cb-0587ec21c6f8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\599a8ae2-b37a-4619-8774-394496b13a58.jpg",
+      "PackagePath": "staticwebassets\\images\\movies\\599a8ae2-b37a-4619-8774-394496b13a58.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\7bcf7265-d280-40a7-93c2-3354b80157c0.jpg",
+      "PackagePath": "staticwebassets\\images\\movies\\7bcf7265-d280-40a7-93c2-3354b80157c0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\GetOut.jpg",
+      "PackagePath": "staticwebassets\\images\\movies\\GetOut.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\e53ff1a4-da99-44f9-9a52-a2fcd8ed2d0b.jpg",
+      "PackagePath": "staticwebassets\\images\\movies\\e53ff1a4-da99-44f9-9a52-a2fcd8ed2d0b.jpg"
+    },
+    {
       "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

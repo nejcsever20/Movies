@@ -114,5 +114,46 @@ namespace Movies.Pages.Friends
             var parts = namePart.Split('.', '-', '_');
             return string.Join(" ", parts.Select(p => CultureInfo.CurrentCulture.TextInfo.ToTitleCase(p)));
         }
+
+        // POST: Accept friend request
+        public async Task<IActionResult> OnPostAcceptRequestAsync(string fromUserId)
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null || string.IsNullOrEmpty(fromUserId))
+                return RedirectToPage();
+
+            var friendship = await _context.Friendships
+                .FirstOrDefaultAsync(f => f.UserId == fromUserId && f.FriendId == currentUser.Id && f.IsPending);
+
+            if (friendship != null)
+            {
+                friendship.IsPending = false;
+                friendship.IsAccepted = true;
+                _context.Update(friendship);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToPage(); // reload notifications
+        }
+
+        // POST: Decline friend request
+        public async Task<IActionResult> OnPostDeclineRequestAsync(string fromUserId)
+        {
+            var currentUser = await _userManager.GetUserAsync(User);
+            if (currentUser == null || string.IsNullOrEmpty(fromUserId))
+                return RedirectToPage();
+
+            var friendship = await _context.Friendships
+                .FirstOrDefaultAsync(f => f.UserId == fromUserId && f.FriendId == currentUser.Id && f.IsPending);
+
+            if (friendship != null)
+            {
+                _context.Friendships.Remove(friendship);
+                await _context.SaveChangesAsync();
+            }
+
+            return RedirectToPage();
+        }
+
     }
 }

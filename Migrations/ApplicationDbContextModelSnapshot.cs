@@ -219,16 +219,15 @@ namespace Movies.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Bio")
-                        .HasColumnType("TEXT");
-
                     b.Property<DateTime?>("BirthDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("ImagePath")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ProfileImageUrl")
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(150)
                         .HasColumnType("TEXT");
 
                     b.HasKey("ActorId");
@@ -344,22 +343,21 @@ namespace Movies.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("DirectorId")
+                    b.Property<int>("DirectorId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("ImagePath")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("PosterUrl")
-                        .HasColumnType("TEXT");
-
                     b.Property<DateTime?>("ReleaseDate")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("RuntimeMinutes")
+                    b.Property<int>("RuntimeMinutes")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
                         .HasColumnType("TEXT");
 
                     b.HasKey("MovieId");
@@ -611,7 +609,9 @@ namespace Movies.Migrations
                 {
                     b.HasOne("Movies.Models.Director", "Director")
                         .WithMany("Movies")
-                        .HasForeignKey("DirectorId");
+                        .HasForeignKey("DirectorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Director");
                 });

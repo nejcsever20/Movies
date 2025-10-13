@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Movies.Data;
@@ -18,7 +14,6 @@ namespace Movies.Pages.Movie
             _context = context;
         }
 
-        // Fully qualified type to avoid namespace collision
         public IList<Movies.Models.Movie> Movies { get; set; } = default!;
         public int PageNumber { get; set; } = 1;
         public int TotalPages { get; set; }

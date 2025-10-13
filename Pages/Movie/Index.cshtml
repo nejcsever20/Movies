@@ -21,7 +21,6 @@
 <div class="container mt-4">
     <h2 class="mb-3">Movies</h2>
 
-    @* Show "Create Movie" button for admins *@
     @if (isAdmin)
     {
         <div class="mb-3">
@@ -33,15 +32,21 @@
         @foreach (var movie in Model.Movies)
         {
             <div class="col">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h6 class="card-title">@movie.Title</h6>
-                        <p class="card-text">
-                            Director: @(movie.Director?.Name ?? "Unknown") <br />
-                            Release: @movie.ReleaseDate?.ToString("yyyy")
-                        </p>
-                        <a asp-page="/Movie/Details" asp-route-id="@movie.MovieId" class="btn btn-sm btn-primary w-100">View</a>
-                    </div>
+                <div class="card h-100 shadow-sm">
+                    <a asp-page="/Movie/Details" asp-route-id="@movie.MovieId" class="text-decoration-none text-dark">
+                        @if (!string.IsNullOrEmpty(movie.ImagePath))
+                        {
+                            <img src="@movie.ImagePath" alt="@movie.Title" class="card-img-top" style="height: 250px; object-fit: cover;">
+                        }
+                        else
+                        {
+                            <img src="/images/movies/default.jpg" alt="No Image" class="card-img-top" style="height: 250px; object-fit: cover;">
+                        }
+
+                        <div class="card-body">
+                            <h6 class="card-title text-center fw-bold">@movie.Title</h6>
+                        </div>
+                    </a>
                 </div>
             </div>
         }

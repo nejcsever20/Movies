@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -18,8 +17,7 @@ namespace Movies.Pages.Movie
             _userManager = userManager;
         }
 
-        // List of genres with their movies
-        public IList<Genre> Genres { get; set; } = default!;
+        public IList<Genre> Genres { get; set; } = new List<Genre>();
         public bool IsAdmin { get; set; } = false;
 
         public async Task OnGetAsync()
@@ -31,12 +29,21 @@ namespace Movies.Pages.Movie
                 IsAdmin = await _userManager.IsInRoleAsync(currentUser, "Admin");
             }
 
-            // Load all genres and include related movies
+            // Load all genres with their movies efficiently
             Genres = await _context.Genres
                 .Include(g => g.MovieGenres)
                     .ThenInclude(mg => mg.Movie)
                 .OrderBy(g => g.Name)
                 .ToListAsync();
+
+            // Optional: Remove duplicates from movies per genre if necessary
+            foreach (var genre in Genres)
+            {
+                genre.MovieGenres = genre.MovieGenres
+                    .GroupBy(mg => mg.MovieId)
+                    .Select(g => g.First())
+                    .ToList();
+            }
         }
     }
 }

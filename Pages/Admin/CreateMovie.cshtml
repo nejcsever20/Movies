@@ -1,5 +1,6 @@
 ﻿@page
 @model Movies.Pages.Admin.CreateMovieModel
+@using Movies.Models
 @{
     ViewData["Title"] = "Create Movie";
 }
@@ -7,31 +8,69 @@
 <div class="container mt-4">
     <h2>Create Movie</h2>
 
-    <form method="post">
+    <!-- Excel Import Button -->
+    <button type="button" class="btn btn-info mb-3" data-bs-toggle="modal" data-bs-target="#excelModal">
+        Import Movies from Excel
+    </button>
+
+    <!-- Excel Modal -->
+    <div class="modal fade" id="excelModal" tabindex="-1" aria-labelledby="excelModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="post" enctype="multipart/form-data" asp-page-handler="ImportExcel">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="excelModalLabel">Import Movies from Excel</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="ExcelFile" class="form-label">Select Excel File (.xlsx)</label>
+                            <input type="file" class="form-control" id="ExcelFile" name="ExcelFile" accept=".xlsx" />
+                        </div>
+                        <p>Excel columns order: <strong>Title | Description | Release Date (mm/dd/yyyy) | Runtime (minutes) | Director | Actors (comma-separated)</strong></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Import</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manual Movie Creation Form -->
+    <form method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+        <!-- Title -->
         <div class="mb-3">
             <label class="form-label">Title</label>
             <input asp-for="NewMovie.Title" class="form-control" required />
             <span asp-validation-for="NewMovie.Title" class="text-danger"></span>
         </div>
 
+        <!-- Description -->
         <div class="mb-3">
             <label class="form-label">Description</label>
             <textarea asp-for="NewMovie.Description" class="form-control" rows="4"></textarea>
             <span asp-validation-for="NewMovie.Description" class="text-danger"></span>
         </div>
 
+        <!-- Release Date -->
         <div class="mb-3">
             <label class="form-label">Release Date</label>
             <input asp-for="NewMovie.ReleaseDate" type="date" class="form-control" required />
             <span asp-validation-for="NewMovie.ReleaseDate" class="text-danger"></span>
         </div>
 
+        <!-- Runtime -->
         <div class="mb-3">
             <label class="form-label">Runtime (Minutes)</label>
             <input asp-for="NewMovie.RuntimeMinutes" type="number" class="form-control" required />
             <span asp-validation-for="NewMovie.RuntimeMinutes" class="text-danger"></span>
         </div>
 
+        <!-- Director -->
         <div class="mb-3">
             <label class="form-label">Director</label>
             <select asp-for="NewMovie.DirectorId" class="form-select" required>
@@ -44,6 +83,7 @@
             <span asp-validation-for="NewMovie.DirectorId" class="text-danger"></span>
         </div>
 
+        <!-- Genre -->
         <div class="mb-3">
             <label class="form-label">Genre</label>
             <select asp-for="SelectedGenreId" class="form-select" required>
@@ -56,21 +96,33 @@
             <span asp-validation-for="SelectedGenreId" class="text-danger"></span>
         </div>
 
+        <!-- Actors -->
         <div class="mb-3">
-            <label class="form-label">Created At</label>
-            <input asp-for="NewMovie.CreatedAt" type="date" class="form-control" required />
-            <span asp-validation-for="NewMovie.CreatedAt" class="text-danger"></span>
+            <label class="form-label">Actor (optional)</label>
+            <select asp-for="NewMovie.MovieActors" class="form-select">
+                <option value="">-- Select Actor --</option>
+                @foreach (var actor in Model.Actors)
+                {
+                    <option value="@actor.ActorId">@actor.Name</option>
+                }
+            </select>
+            <span asp-validation-for="NewMovie.MovieActors" class="text-danger"></span>
         </div>
 
+        <!-- Image -->
         <div class="mb-3">
             <label class="form-label">Movie Image</label>
             <input asp-for="ImageFile" type="file" class="form-control" />
             <span asp-validation-for="ImageFile" class="text-danger"></span>
         </div>
 
-
         <button type="submit" class="btn btn-primary">Create Movie</button>
     </form>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success mt-3">@TempData["SuccessMessage"]</div>
+    }
 </div>
 
 @section Scripts {

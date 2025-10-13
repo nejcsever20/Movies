@@ -1,0 +1,30 @@
+﻿@page
+@model Movies.Pages.Admin.ImportActorsModel
+@{
+    ViewData["Title"] = "Import Actors";
+}
+
+<div class="container mt-4">
+    <h2>Import Actors from Excel</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+            <label class="form-label">Select Excel File</label>
+            <input asp-for="ExcelFile" type="file" class="form-control" accept=".xlsx" />
+            <span asp-validation-for="ExcelFile" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Import Actors</button>
+    </form>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success mt-3">@TempData["SuccessMessage"]</div>
+    }
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

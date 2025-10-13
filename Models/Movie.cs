@@ -21,6 +21,9 @@ namespace Movies.Models
         // ✅ Make ImagePath optional
         public string? ImagePath { get; set; }
 
+        public string? TrailerUrl { get; set; }
+
+
         [Required]
         [ForeignKey("Director")]
         public int DirectorId { get; set; }

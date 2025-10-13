@@ -360,6 +360,9 @@ namespace Movies.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("TrailerUrl")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("MovieId");
 
                     b.HasIndex("DirectorId");

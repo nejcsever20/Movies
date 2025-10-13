@@ -33,7 +33,8 @@
         {
             <div class="col">
                 <div class="card h-100 shadow-sm">
-                    <a asp-page="/Movie/Details" asp-route-id="@movie.MovieId" class="text-decoration-none text-dark">
+                    <!-- Clickable movie cover -->
+                    <a asp-page="/Admin/DetailsMovie" asp-route-id="@movie.MovieId" class="text-decoration-none text-dark">
                         @if (!string.IsNullOrEmpty(movie.ImagePath))
                         {
                             <img src="@movie.ImagePath" alt="@movie.Title" class="card-img-top" style="height: 250px; object-fit: cover;">
@@ -47,6 +48,40 @@
                             <h6 class="card-title text-center fw-bold">@movie.Title</h6>
                         </div>
                     </a>
+
+                    <!-- Action buttons -->
+                    <div class="card-footer text-center bg-light">
+                        <a asp-page="/Admin/DetailsMovie" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-primary me-1">
+                            Details
+                        </a>
+
+                        @* Trailer Button triggers modal *@
+                        @if (!string.IsNullOrEmpty(movie.TrailerUrl))
+                        {
+                            <button class="btn btn-sm btn-outline-dark me-1"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#trailerModal"
+                                    data-trailer-url="@movie.TrailerUrl"
+                                    data-movie-title="@movie.Title">
+                                Trailer
+                            </button>
+                        }
+
+                        @if (isAdmin)
+                        {
+                            <a asp-page="/Admin/EditMovie" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-warning me-1">
+                                Edit
+                            </a>
+
+                            <form method="post" asp-page="/Admin/DetailsMovie" asp-page-handler="Delete" class="d-inline">
+                                <input type="hidden" name="id" value="@movie.MovieId" />
+                                <button type="submit" class="btn btn-sm btn-outline-danger"
+                                        onclick="return confirm('Delete this movie?')">
+                                    Delete
+                                </button>
+                            </form>
+                        }
+                    </div>
                 </div>
             </div>
         }
@@ -64,3 +99,49 @@
         </ul>
     </nav>
 </div>
+
+@* Trailer Modal *@
+<div class="modal fade" id="trailerModal" tabindex="-1" aria-labelledby="trailerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="trailerModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="stopTrailer()"></button>
+            </div>
+            <div class="modal-body text-center">
+                <div class="ratio ratio-16x9">
+                    <iframe id="trailerIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Set trailer URL dynamically when modal opens
+        var trailerModal = document.getElementById('trailerModal');
+        trailerModal.addEventListener('show.bs.modal', function (event) {
+            var button = event.relatedTarget;
+            var trailerUrl = button.getAttribute('data-trailer-url');
+            var movieTitle = button.getAttribute('data-movie-title');
+
+            var modalTitle = trailerModal.querySelector('.modal-title');
+            var iframe = trailerModal.querySelector('#trailerIframe');
+
+            modalTitle.textContent = movieTitle + " - Trailer";
+            iframe.src = trailerUrl;
+        });
+
+        // Stop trailer when modal closes
+        trailerModal.addEventListener('hidden.bs.modal', function () {
+            var iframe = document.getElementById('trailerIframe');
+            iframe.src = "";
+        });
+
+        function stopTrailer() {
+            var iframe = document.getElementById('trailerIframe');
+            iframe.src = "";
+        }
+    </script>
+}

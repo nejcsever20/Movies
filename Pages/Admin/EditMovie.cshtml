@@ -1,0 +1,82 @@
+﻿@page "{id:int}"
+@model Movies.Pages.Admin.EditMovieModel
+@{
+    ViewData["Title"] = "Edit Movie";
+}
+
+<div class="container mt-4">
+    <h2>Edit Movie</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="Movie.MovieId" />
+
+        <div class="row">
+            <!-- Left Column: Title + Poster -->
+            <div class="col-md-4 text-center">
+                <div class="mb-3">
+                    <label asp-for="Movie.Title" class="form-label"></label>
+                    <input asp-for="Movie.Title" class="form-control" />
+                    <span asp-validation-for="Movie.Title" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Poster Image</label><br />
+                    @if (!string.IsNullOrEmpty(Model.Movie.ImagePath))
+                    {
+                        <img src="@Model.Movie.ImagePath" alt="Movie Image" style="height:150px;" class="mb-2 rounded shadow" />
+                    }
+                    <input type="file" name="imageFile" class="form-control mt-2" />
+                </div>
+            </div>
+
+            <!-- Right Column: Other Fields -->
+            <div class="col-md-8">
+                <div class="mb-3">
+                    <label asp-for="Movie.Description" class="form-label"></label>
+                    <textarea asp-for="Movie.Description" class="form-control" rows="4"></textarea>
+                    <span asp-validation-for="Movie.Description" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Trailer URL</label>
+                    <input asp-for="Movie.TrailerUrl" id="trailerUrlInput" class="form-control" placeholder="https://www.youtube.com/embed/..." />
+                    <span asp-validation-for="Movie.TrailerUrl" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Movie.ReleaseDate" class="form-label"></label>
+                    <input asp-for="Movie.ReleaseDate" type="date" class="form-control" />
+                    <span asp-validation-for="Movie.ReleaseDate" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-success">Save Changes</button>
+                <a asp-page="/Admin/DetailsMovie" asp-route-id="@Model.Movie.MovieId" class="btn btn-secondary ms-2">Cancel</a>
+            </div>
+        </div>
+
+        <!-- Embedded Trailer Below Columns -->
+        <div class="mt-4">
+            <h5>Trailer Preview</h5>
+            <div class="ratio ratio-16x9">
+                <iframe id="trailerPreview" src="@Model.Movie.TrailerUrl" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Update trailer preview live when URL input changes
+        const trailerInput = document.getElementById('trailerUrlInput');
+        const trailerFrame = document.getElementById('trailerPreview');
+
+        if (trailerInput) {
+            trailerInput.addEventListener('input', function () {
+                trailerFrame.src = trailerInput.value;
+            });
+        }
+    </script>
+}

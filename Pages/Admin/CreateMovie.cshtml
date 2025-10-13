@@ -109,6 +109,13 @@
             <span asp-validation-for="NewMovie.MovieActors" class="text-danger"></span>
         </div>
 
+        <!-- Trailer URL -->
+        <div class="mb-3">
+            <label class="form-label">Trailer URL</label>
+            <input asp-for="NewMovie.TrailerUrl" class="form-control" placeholder="https://www.youtube.com/embed/..." />
+            <span asp-validation-for="NewMovie.TrailerUrl" class="text-danger"></span>
+        </div>
+
         <!-- Image -->
         <div class="mb-3">
             <label class="form-label">Movie Image</label>

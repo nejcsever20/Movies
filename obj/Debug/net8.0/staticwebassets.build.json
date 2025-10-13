@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RmVqI8o1AhAwODyIlrisWX0n/QCU5X+z9KVZbnJp7Ho=",
+  "Hash": "p6LH1oAQxuQtOL31vQ+vascUFnygCzDImQOx0oonsZA=",
   "Source": "Movies",
   "BasePath": "_content/Movies",
   "Mode": "Default",
@@ -1697,6 +1697,90 @@
       "OriginalItemSpec": "wwwroot\\images\\actors\\ef55c075-b665-440f-97cb-0587ec21c6f8.jpg"
     },
     {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\1650a0d9-de22-4ac7-89fe-a50abddf5b29.webp",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/1650a0d9-de22-4ac7-89fe-a50abddf5b29#[.{fingerprint}]?.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "k44rxlf66i",
+      "Integrity": "XA0qbYvB7Am9HcrmzCDtIwaRzfB8eyie6MKUVf04e10=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\1650a0d9-de22-4ac7-89fe-a50abddf5b29.webp"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\3ccd6f38-1a46-4077-89ce-91f416050176.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/3ccd6f38-1a46-4077-89ce-91f416050176#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "s1xjcmwql6",
+      "Integrity": "8K1iw89nWYHgvIePV44yIi13Fowov+sjChOHk9gds4M=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\3ccd6f38-1a46-4077-89ce-91f416050176.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\4e55c6f1-c4bd-4fd8-bdcc-d16f8cd32d70.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/4e55c6f1-c4bd-4fd8-bdcc-d16f8cd32d70#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "x2w3rp25u4",
+      "Integrity": "19tb69225u+j/Jf6EYN6scJSB11IXlGROVPW1unlJ2U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\4e55c6f1-c4bd-4fd8-bdcc-d16f8cd32d70.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\543887ce-ea9e-4fc5-aeec-b496b62284b9.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/543887ce-ea9e-4fc5-aeec-b496b62284b9#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "b2g3f3spxb",
+      "Integrity": "E88pseoX5kg6uj4FLHI6ETCUpUHMkUCcgbtx34NwfgE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\543887ce-ea9e-4fc5-aeec-b496b62284b9.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\599a8ae2-b37a-4619-8774-394496b13a58.jpg",
       "SourceId": "Movies",
       "SourceType": "Discovered",
@@ -1716,6 +1800,153 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\movies\\599a8ae2-b37a-4619-8774-394496b13a58.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\5f468edd-0b33-4d99-8868-c7987add6ff9.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/5f468edd-0b33-4d99-8868-c7987add6ff9#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "586v2r5wtl",
+      "Integrity": "RQ/d10cvbW1kp9ikfEONU/iBH1cp5SSTMQr2uF1ySIw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\5f468edd-0b33-4d99-8868-c7987add6ff9.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\6343b1f9-781a-4564-9643-98fac8e8d137.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/6343b1f9-781a-4564-9643-98fac8e8d137#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kfrt1svy40",
+      "Integrity": "4M4r0hCU7s3v3CgfPptNR+fA/qPqMDEn5SV24jBj/ug=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\6343b1f9-781a-4564-9643-98fac8e8d137.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\68543d23-39ea-4333-aba1-9f8b6def700e.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/68543d23-39ea-4333-aba1-9f8b6def700e#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bvw903h4e1",
+      "Integrity": "WfUNQi+ndI3SwbeM/HHEB4Y2f1rL4lkgTkayqLkCTMM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\68543d23-39ea-4333-aba1-9f8b6def700e.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\6be6ffa8-c38a-4e04-8ee2-5fcaa7e01ed3.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/6be6ffa8-c38a-4e04-8ee2-5fcaa7e01ed3#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fghdif4zi0",
+      "Integrity": "n4d3+XMTQ4w1jOZyu/8KPZ14F+1n7Ga3BFJvagIolzI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\6be6ffa8-c38a-4e04-8ee2-5fcaa7e01ed3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\6c158ae0-b4c1-47ef-a2ab-98acd484d005.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/6c158ae0-b4c1-47ef-a2ab-98acd484d005#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "57bbkof5hu",
+      "Integrity": "j841WEC9ErrhC7stUzh0ls1ZEVxLHozDwgR54DzK4aw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\6c158ae0-b4c1-47ef-a2ab-98acd484d005.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\6d2faea8-ab7b-422d-809e-b8b2f153e0d4.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/6d2faea8-ab7b-422d-809e-b8b2f153e0d4#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "jvh29it32o",
+      "Integrity": "AXgmHBuMpeOR4l3Ay99HvscTuBvuABdmd/LHdMt0NbM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\6d2faea8-ab7b-422d-809e-b8b2f153e0d4.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\73a72404-9a01-4627-94b2-23acf8a64c57.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/73a72404-9a01-4627-94b2-23acf8a64c57#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "471ox6pfq6",
+      "Integrity": "8PqQLJlH2ue5kKZ0LzpF9ReOLsym3W3CO2VBsTwD+nU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\73a72404-9a01-4627-94b2-23acf8a64c57.jpg"
     },
     {
       "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\7bcf7265-d280-40a7-93c2-3354b80157c0.jpg",
@@ -1739,6 +1970,174 @@
       "OriginalItemSpec": "wwwroot\\images\\movies\\7bcf7265-d280-40a7-93c2-3354b80157c0.jpg"
     },
     {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\7fa8792a-2dc4-4348-a6a4-ecd6b1303e37.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/7fa8792a-2dc4-4348-a6a4-ecd6b1303e37#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7z1puqdd2c",
+      "Integrity": "Q2z2ai5Yf78nr+EdbVnqYdeuhe29rfKdw/Sk/plZQaE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\7fa8792a-2dc4-4348-a6a4-ecd6b1303e37.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\9b0de85f-1e1c-4876-8a9d-011bc50a3bb7.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/9b0de85f-1e1c-4876-8a9d-011bc50a3bb7#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0huoad8s9q",
+      "Integrity": "RM7kmDLetQ9+GaFNiL1BkSnSr4AUdXgl0v60tGFat7g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\9b0de85f-1e1c-4876-8a9d-011bc50a3bb7.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\ada244a8-662b-45d1-aa22-bf29ceb8687d.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/ada244a8-662b-45d1-aa22-bf29ceb8687d#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "k61r3w96n4",
+      "Integrity": "RE63qMSp6neqHAWu2V9POBZnKxvJQ4FdftH/zn/9j9g=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\ada244a8-662b-45d1-aa22-bf29ceb8687d.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\c4c1b7fe-dfee-4339-96d2-c3bfa80bd7a9.png",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/c4c1b7fe-dfee-4339-96d2-c3bfa80bd7a9#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3q7h5kegi4",
+      "Integrity": "pen1SJ6SDlO4tCotnByk5s1oumauEq1cTQDacoiBxkU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\c4c1b7fe-dfee-4339-96d2-c3bfa80bd7a9.png"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\cc550937-8b1c-4f9a-972e-452767a711da.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/cc550937-8b1c-4f9a-972e-452767a711da#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "okkuz9m1xt",
+      "Integrity": "WNXKTxMD8JSwMyCbgfsZSEdeD8tQ5VuEsjL55dzDzUI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\cc550937-8b1c-4f9a-972e-452767a711da.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\dbaba5ad-1867-42e4-9993-2b047c32d01b.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/dbaba5ad-1867-42e4-9993-2b047c32d01b#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "etjdydn1mq",
+      "Integrity": "kguyZsU775QOpfiZ53JjFnyQPGACaQdcmWm3dZA8DC4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\dbaba5ad-1867-42e4-9993-2b047c32d01b.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\ddd6c636-1dbe-420f-8eff-981eda04a2f3.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/ddd6c636-1dbe-420f-8eff-981eda04a2f3#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dmkih57p4d",
+      "Integrity": "GzI0ddMioC71QlFZ71wVYBsxfEFkvADFJx3KqjC24zc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\ddd6c636-1dbe-420f-8eff-981eda04a2f3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\e3aeb75b-0836-4c94-ad70-40833e26a5d7.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/e3aeb75b-0836-4c94-ad70-40833e26a5d7#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "io527m602a",
+      "Integrity": "QmiTcXWNa9wIDL8uepSxz+J2g5GcyMMX5cD24NARHuw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\e3aeb75b-0836-4c94-ad70-40833e26a5d7.jpg"
+    },
+    {
       "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\e53ff1a4-da99-44f9-9a52-a2fcd8ed2d0b.jpg",
       "SourceId": "Movies",
       "SourceType": "Discovered",
@@ -1758,6 +2157,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\movies\\e53ff1a4-da99-44f9-9a52-a2fcd8ed2d0b.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\fce08fd4-4745-4025-a654-137ced6d7f91.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/fce08fd4-4745-4025-a654-137ced6d7f91#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "u73h0lkwm2",
+      "Integrity": "diHx5r1k2TamveyEIHGFKKM3FlQvuv+PVswT0YB7lUo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\fce08fd4-4745-4025-a654-137ced6d7f91.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\fede6af5-5f0f-4163-9108-1d5fff8b3e92.jpg",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "images/movies/fede6af5-5f0f-4163-9108-1d5fff8b3e92#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "syeeeslzzn",
+      "Integrity": "vO7GInhR2MySkfwHa79n5Lo/TRLN62dsgynTLlWBz2w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\movies\\fede6af5-5f0f-4163-9108-1d5fff8b3e92.jpg"
     },
     {
       "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\GetOut.jpg",
@@ -6697,6 +7138,334 @@
       ]
     },
     {
+      "Route": "images/movies/1650a0d9-de22-4ac7-89fe-a50abddf5b29.k44rxlf66i.webp",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\1650a0d9-de22-4ac7-89fe-a50abddf5b29.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21032"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XA0qbYvB7Am9HcrmzCDtIwaRzfB8eyie6MKUVf04e10=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:31:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k44rxlf66i"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/1650a0d9-de22-4ac7-89fe-a50abddf5b29.webp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XA0qbYvB7Am9HcrmzCDtIwaRzfB8eyie6MKUVf04e10="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/1650a0d9-de22-4ac7-89fe-a50abddf5b29.webp",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\1650a0d9-de22-4ac7-89fe-a50abddf5b29.webp",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21032"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/webp"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XA0qbYvB7Am9HcrmzCDtIwaRzfB8eyie6MKUVf04e10=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:31:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XA0qbYvB7Am9HcrmzCDtIwaRzfB8eyie6MKUVf04e10="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/3ccd6f38-1a46-4077-89ce-91f416050176.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\3ccd6f38-1a46-4077-89ce-91f416050176.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9552"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8K1iw89nWYHgvIePV44yIi13Fowov+sjChOHk9gds4M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:29:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8K1iw89nWYHgvIePV44yIi13Fowov+sjChOHk9gds4M="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/3ccd6f38-1a46-4077-89ce-91f416050176.s1xjcmwql6.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\3ccd6f38-1a46-4077-89ce-91f416050176.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9552"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8K1iw89nWYHgvIePV44yIi13Fowov+sjChOHk9gds4M=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:29:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s1xjcmwql6"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/3ccd6f38-1a46-4077-89ce-91f416050176.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8K1iw89nWYHgvIePV44yIi13Fowov+sjChOHk9gds4M="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/4e55c6f1-c4bd-4fd8-bdcc-d16f8cd32d70.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\4e55c6f1-c4bd-4fd8-bdcc-d16f8cd32d70.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10425"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"19tb69225u+j/Jf6EYN6scJSB11IXlGROVPW1unlJ2U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:14:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-19tb69225u+j/Jf6EYN6scJSB11IXlGROVPW1unlJ2U="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/4e55c6f1-c4bd-4fd8-bdcc-d16f8cd32d70.x2w3rp25u4.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\4e55c6f1-c4bd-4fd8-bdcc-d16f8cd32d70.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10425"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"19tb69225u+j/Jf6EYN6scJSB11IXlGROVPW1unlJ2U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:14:10 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x2w3rp25u4"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/4e55c6f1-c4bd-4fd8-bdcc-d16f8cd32d70.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-19tb69225u+j/Jf6EYN6scJSB11IXlGROVPW1unlJ2U="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/543887ce-ea9e-4fc5-aeec-b496b62284b9.b2g3f3spxb.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\543887ce-ea9e-4fc5-aeec-b496b62284b9.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11379"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"E88pseoX5kg6uj4FLHI6ETCUpUHMkUCcgbtx34NwfgE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:30:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "b2g3f3spxb"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/543887ce-ea9e-4fc5-aeec-b496b62284b9.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-E88pseoX5kg6uj4FLHI6ETCUpUHMkUCcgbtx34NwfgE="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/543887ce-ea9e-4fc5-aeec-b496b62284b9.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\543887ce-ea9e-4fc5-aeec-b496b62284b9.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11379"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"E88pseoX5kg6uj4FLHI6ETCUpUHMkUCcgbtx34NwfgE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:30:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-E88pseoX5kg6uj4FLHI6ETCUpUHMkUCcgbtx34NwfgE="
+        }
+      ]
+    },
+    {
       "Route": "images/movies/599a8ae2-b37a-4619-8774-394496b13a58.537b3r0sq4.jpg",
       "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\599a8ae2-b37a-4619-8774-394496b13a58.jpg",
       "Selectors": [],
@@ -6775,6 +7544,580 @@
         {
           "Name": "integrity",
           "Value": "sha256-X9hCluC2drvDRPTOSnPJZB8f+TgVseD64CEDd/vDWh8="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/5f468edd-0b33-4d99-8868-c7987add6ff9.586v2r5wtl.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\5f468edd-0b33-4d99-8868-c7987add6ff9.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17515"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RQ/d10cvbW1kp9ikfEONU/iBH1cp5SSTMQr2uF1ySIw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:14:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "586v2r5wtl"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/5f468edd-0b33-4d99-8868-c7987add6ff9.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RQ/d10cvbW1kp9ikfEONU/iBH1cp5SSTMQr2uF1ySIw="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/5f468edd-0b33-4d99-8868-c7987add6ff9.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\5f468edd-0b33-4d99-8868-c7987add6ff9.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17515"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RQ/d10cvbW1kp9ikfEONU/iBH1cp5SSTMQr2uF1ySIw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:14:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RQ/d10cvbW1kp9ikfEONU/iBH1cp5SSTMQr2uF1ySIw="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/6343b1f9-781a-4564-9643-98fac8e8d137.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\6343b1f9-781a-4564-9643-98fac8e8d137.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10676"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4M4r0hCU7s3v3CgfPptNR+fA/qPqMDEn5SV24jBj/ug=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:23:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4M4r0hCU7s3v3CgfPptNR+fA/qPqMDEn5SV24jBj/ug="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/6343b1f9-781a-4564-9643-98fac8e8d137.kfrt1svy40.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\6343b1f9-781a-4564-9643-98fac8e8d137.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10676"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4M4r0hCU7s3v3CgfPptNR+fA/qPqMDEn5SV24jBj/ug=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:23:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kfrt1svy40"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/6343b1f9-781a-4564-9643-98fac8e8d137.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4M4r0hCU7s3v3CgfPptNR+fA/qPqMDEn5SV24jBj/ug="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/68543d23-39ea-4333-aba1-9f8b6def700e.bvw903h4e1.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\68543d23-39ea-4333-aba1-9f8b6def700e.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7251"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WfUNQi+ndI3SwbeM/HHEB4Y2f1rL4lkgTkayqLkCTMM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:32:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bvw903h4e1"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/68543d23-39ea-4333-aba1-9f8b6def700e.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WfUNQi+ndI3SwbeM/HHEB4Y2f1rL4lkgTkayqLkCTMM="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/68543d23-39ea-4333-aba1-9f8b6def700e.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\68543d23-39ea-4333-aba1-9f8b6def700e.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7251"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WfUNQi+ndI3SwbeM/HHEB4Y2f1rL4lkgTkayqLkCTMM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:32:47 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WfUNQi+ndI3SwbeM/HHEB4Y2f1rL4lkgTkayqLkCTMM="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/6be6ffa8-c38a-4e04-8ee2-5fcaa7e01ed3.fghdif4zi0.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\6be6ffa8-c38a-4e04-8ee2-5fcaa7e01ed3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5234"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n4d3+XMTQ4w1jOZyu/8KPZ14F+1n7Ga3BFJvagIolzI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:20:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fghdif4zi0"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/6be6ffa8-c38a-4e04-8ee2-5fcaa7e01ed3.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-n4d3+XMTQ4w1jOZyu/8KPZ14F+1n7Ga3BFJvagIolzI="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/6be6ffa8-c38a-4e04-8ee2-5fcaa7e01ed3.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\6be6ffa8-c38a-4e04-8ee2-5fcaa7e01ed3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5234"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"n4d3+XMTQ4w1jOZyu/8KPZ14F+1n7Ga3BFJvagIolzI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:20:19 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-n4d3+XMTQ4w1jOZyu/8KPZ14F+1n7Ga3BFJvagIolzI="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/6c158ae0-b4c1-47ef-a2ab-98acd484d005.57bbkof5hu.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\6c158ae0-b4c1-47ef-a2ab-98acd484d005.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8288"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j841WEC9ErrhC7stUzh0ls1ZEVxLHozDwgR54DzK4aw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:27:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "57bbkof5hu"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/6c158ae0-b4c1-47ef-a2ab-98acd484d005.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-j841WEC9ErrhC7stUzh0ls1ZEVxLHozDwgR54DzK4aw="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/6c158ae0-b4c1-47ef-a2ab-98acd484d005.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\6c158ae0-b4c1-47ef-a2ab-98acd484d005.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8288"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"j841WEC9ErrhC7stUzh0ls1ZEVxLHozDwgR54DzK4aw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:27:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-j841WEC9ErrhC7stUzh0ls1ZEVxLHozDwgR54DzK4aw="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/6d2faea8-ab7b-422d-809e-b8b2f153e0d4.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\6d2faea8-ab7b-422d-809e-b8b2f153e0d4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8682"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AXgmHBuMpeOR4l3Ay99HvscTuBvuABdmd/LHdMt0NbM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:10:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-AXgmHBuMpeOR4l3Ay99HvscTuBvuABdmd/LHdMt0NbM="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/6d2faea8-ab7b-422d-809e-b8b2f153e0d4.jvh29it32o.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\6d2faea8-ab7b-422d-809e-b8b2f153e0d4.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8682"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"AXgmHBuMpeOR4l3Ay99HvscTuBvuABdmd/LHdMt0NbM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:10:20 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jvh29it32o"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/6d2faea8-ab7b-422d-809e-b8b2f153e0d4.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-AXgmHBuMpeOR4l3Ay99HvscTuBvuABdmd/LHdMt0NbM="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/73a72404-9a01-4627-94b2-23acf8a64c57.471ox6pfq6.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\73a72404-9a01-4627-94b2-23acf8a64c57.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10883"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8PqQLJlH2ue5kKZ0LzpF9ReOLsym3W3CO2VBsTwD+nU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:33:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "471ox6pfq6"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/73a72404-9a01-4627-94b2-23acf8a64c57.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-8PqQLJlH2ue5kKZ0LzpF9ReOLsym3W3CO2VBsTwD+nU="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/73a72404-9a01-4627-94b2-23acf8a64c57.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\73a72404-9a01-4627-94b2-23acf8a64c57.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10883"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"8PqQLJlH2ue5kKZ0LzpF9ReOLsym3W3CO2VBsTwD+nU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:33:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-8PqQLJlH2ue5kKZ0LzpF9ReOLsym3W3CO2VBsTwD+nU="
         }
       ]
     },
@@ -6861,6 +8204,662 @@
       ]
     },
     {
+      "Route": "images/movies/7fa8792a-2dc4-4348-a6a4-ecd6b1303e37.7z1puqdd2c.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\7fa8792a-2dc4-4348-a6a4-ecd6b1303e37.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10906"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q2z2ai5Yf78nr+EdbVnqYdeuhe29rfKdw/Sk/plZQaE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:23:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7z1puqdd2c"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/7fa8792a-2dc4-4348-a6a4-ecd6b1303e37.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q2z2ai5Yf78nr+EdbVnqYdeuhe29rfKdw/Sk/plZQaE="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/7fa8792a-2dc4-4348-a6a4-ecd6b1303e37.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\7fa8792a-2dc4-4348-a6a4-ecd6b1303e37.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10906"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q2z2ai5Yf78nr+EdbVnqYdeuhe29rfKdw/Sk/plZQaE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:23:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q2z2ai5Yf78nr+EdbVnqYdeuhe29rfKdw/Sk/plZQaE="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/9b0de85f-1e1c-4876-8a9d-011bc50a3bb7.0huoad8s9q.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\9b0de85f-1e1c-4876-8a9d-011bc50a3bb7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8026"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RM7kmDLetQ9+GaFNiL1BkSnSr4AUdXgl0v60tGFat7g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:27:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0huoad8s9q"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/9b0de85f-1e1c-4876-8a9d-011bc50a3bb7.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RM7kmDLetQ9+GaFNiL1BkSnSr4AUdXgl0v60tGFat7g="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/9b0de85f-1e1c-4876-8a9d-011bc50a3bb7.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\9b0de85f-1e1c-4876-8a9d-011bc50a3bb7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8026"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RM7kmDLetQ9+GaFNiL1BkSnSr4AUdXgl0v60tGFat7g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:27:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RM7kmDLetQ9+GaFNiL1BkSnSr4AUdXgl0v60tGFat7g="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/ada244a8-662b-45d1-aa22-bf29ceb8687d.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\ada244a8-662b-45d1-aa22-bf29ceb8687d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13694"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RE63qMSp6neqHAWu2V9POBZnKxvJQ4FdftH/zn/9j9g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:20:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-RE63qMSp6neqHAWu2V9POBZnKxvJQ4FdftH/zn/9j9g="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/ada244a8-662b-45d1-aa22-bf29ceb8687d.k61r3w96n4.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\ada244a8-662b-45d1-aa22-bf29ceb8687d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13694"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"RE63qMSp6neqHAWu2V9POBZnKxvJQ4FdftH/zn/9j9g=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:20:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k61r3w96n4"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/ada244a8-662b-45d1-aa22-bf29ceb8687d.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-RE63qMSp6neqHAWu2V9POBZnKxvJQ4FdftH/zn/9j9g="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/c4c1b7fe-dfee-4339-96d2-c3bfa80bd7a9.3q7h5kegi4.png",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\c4c1b7fe-dfee-4339-96d2-c3bfa80bd7a9.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "39040"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pen1SJ6SDlO4tCotnByk5s1oumauEq1cTQDacoiBxkU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:32:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3q7h5kegi4"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/c4c1b7fe-dfee-4339-96d2-c3bfa80bd7a9.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pen1SJ6SDlO4tCotnByk5s1oumauEq1cTQDacoiBxkU="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/c4c1b7fe-dfee-4339-96d2-c3bfa80bd7a9.png",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\c4c1b7fe-dfee-4339-96d2-c3bfa80bd7a9.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "39040"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pen1SJ6SDlO4tCotnByk5s1oumauEq1cTQDacoiBxkU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:32:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pen1SJ6SDlO4tCotnByk5s1oumauEq1cTQDacoiBxkU="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/cc550937-8b1c-4f9a-972e-452767a711da.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\cc550937-8b1c-4f9a-972e-452767a711da.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6353"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WNXKTxMD8JSwMyCbgfsZSEdeD8tQ5VuEsjL55dzDzUI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:29:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WNXKTxMD8JSwMyCbgfsZSEdeD8tQ5VuEsjL55dzDzUI="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/cc550937-8b1c-4f9a-972e-452767a711da.okkuz9m1xt.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\cc550937-8b1c-4f9a-972e-452767a711da.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6353"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WNXKTxMD8JSwMyCbgfsZSEdeD8tQ5VuEsjL55dzDzUI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:29:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "okkuz9m1xt"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/cc550937-8b1c-4f9a-972e-452767a711da.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WNXKTxMD8JSwMyCbgfsZSEdeD8tQ5VuEsjL55dzDzUI="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/dbaba5ad-1867-42e4-9993-2b047c32d01b.etjdydn1mq.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\dbaba5ad-1867-42e4-9993-2b047c32d01b.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19240"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kguyZsU775QOpfiZ53JjFnyQPGACaQdcmWm3dZA8DC4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:26:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "etjdydn1mq"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/dbaba5ad-1867-42e4-9993-2b047c32d01b.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kguyZsU775QOpfiZ53JjFnyQPGACaQdcmWm3dZA8DC4="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/dbaba5ad-1867-42e4-9993-2b047c32d01b.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\dbaba5ad-1867-42e4-9993-2b047c32d01b.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19240"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kguyZsU775QOpfiZ53JjFnyQPGACaQdcmWm3dZA8DC4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:26:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kguyZsU775QOpfiZ53JjFnyQPGACaQdcmWm3dZA8DC4="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/ddd6c636-1dbe-420f-8eff-981eda04a2f3.dmkih57p4d.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\ddd6c636-1dbe-420f-8eff-981eda04a2f3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11860"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GzI0ddMioC71QlFZ71wVYBsxfEFkvADFJx3KqjC24zc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:26:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dmkih57p4d"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/ddd6c636-1dbe-420f-8eff-981eda04a2f3.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-GzI0ddMioC71QlFZ71wVYBsxfEFkvADFJx3KqjC24zc="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/ddd6c636-1dbe-420f-8eff-981eda04a2f3.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\ddd6c636-1dbe-420f-8eff-981eda04a2f3.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "11860"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"GzI0ddMioC71QlFZ71wVYBsxfEFkvADFJx3KqjC24zc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:26:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-GzI0ddMioC71QlFZ71wVYBsxfEFkvADFJx3KqjC24zc="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/e3aeb75b-0836-4c94-ad70-40833e26a5d7.io527m602a.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\e3aeb75b-0836-4c94-ad70-40833e26a5d7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7536"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QmiTcXWNa9wIDL8uepSxz+J2g5GcyMMX5cD24NARHuw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:25:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "io527m602a"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/e3aeb75b-0836-4c94-ad70-40833e26a5d7.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QmiTcXWNa9wIDL8uepSxz+J2g5GcyMMX5cD24NARHuw="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/e3aeb75b-0836-4c94-ad70-40833e26a5d7.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\e3aeb75b-0836-4c94-ad70-40833e26a5d7.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7536"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QmiTcXWNa9wIDL8uepSxz+J2g5GcyMMX5cD24NARHuw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:25:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QmiTcXWNa9wIDL8uepSxz+J2g5GcyMMX5cD24NARHuw="
+        }
+      ]
+    },
+    {
       "Route": "images/movies/e53ff1a4-da99-44f9-9a52-a2fcd8ed2d0b.jpg",
       "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\e53ff1a4-da99-44f9-9a52-a2fcd8ed2d0b.jpg",
       "Selectors": [],
@@ -6939,6 +8938,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-GnpPjU8l9/ZTIKOAch3iqFkjwoiTFiS+DT31IBv1tHE="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/fce08fd4-4745-4025-a654-137ced6d7f91.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\fce08fd4-4745-4025-a654-137ced6d7f91.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14040"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"diHx5r1k2TamveyEIHGFKKM3FlQvuv+PVswT0YB7lUo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:33:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-diHx5r1k2TamveyEIHGFKKM3FlQvuv+PVswT0YB7lUo="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/fce08fd4-4745-4025-a654-137ced6d7f91.u73h0lkwm2.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\fce08fd4-4745-4025-a654-137ced6d7f91.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14040"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"diHx5r1k2TamveyEIHGFKKM3FlQvuv+PVswT0YB7lUo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:33:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "u73h0lkwm2"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/fce08fd4-4745-4025-a654-137ced6d7f91.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-diHx5r1k2TamveyEIHGFKKM3FlQvuv+PVswT0YB7lUo="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/fede6af5-5f0f-4163-9108-1d5fff8b3e92.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\fede6af5-5f0f-4163-9108-1d5fff8b3e92.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8376"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vO7GInhR2MySkfwHa79n5Lo/TRLN62dsgynTLlWBz2w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:21:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vO7GInhR2MySkfwHa79n5Lo/TRLN62dsgynTLlWBz2w="
+        }
+      ]
+    },
+    {
+      "Route": "images/movies/fede6af5-5f0f-4163-9108-1d5fff8b3e92.syeeeslzzn.jpg",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\images\\movies\\fede6af5-5f0f-4163-9108-1d5fff8b3e92.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "8376"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vO7GInhR2MySkfwHa79n5Lo/TRLN62dsgynTLlWBz2w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 13 Oct 2025 16:21:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "syeeeslzzn"
+        },
+        {
+          "Name": "label",
+          "Value": "images/movies/fede6af5-5f0f-4163-9108-1d5fff8b3e92.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vO7GInhR2MySkfwHa79n5Lo/TRLN62dsgynTLlWBz2w="
         }
       ]
     },

@@ -1,0 +1,105 @@
+﻿@page
+@model Movies.Pages.Movie.TrailersModel
+@using Movies.Models
+@inject Movies.Data.ApplicationDbContext _context
+
+@{
+    ViewData["Title"] = "Movie Trailers";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Movie Trailers</h2>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        @foreach (var movie in Model.Movies)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm">
+                    @if (!string.IsNullOrEmpty(movie.ImagePath))
+                    {
+                        <img src="@movie.ImagePath" class="card-img-top" style="height:250px; object-fit:cover;" alt="@movie.Title" />
+                    }
+                    else
+                    {
+                        <img src="/images/movies/default.jpg" class="card-img-top" style="height:250px; object-fit:cover;" alt="No Image" />
+                    }
+
+                    <div class="card-body text-center">
+                        <h6 class="card-title">@movie.Title</h6>
+
+                        @if (!string.IsNullOrEmpty(movie.TrailerUrl))
+                        {
+                            <button class="btn btn-primary btn-sm mt-2" data-bs-toggle="modal" data-bs-target="#trailerModal"
+                                    data-trailer-url="@movie.TrailerUrl" data-movie-title="@movie.Title">
+                                Watch Trailer
+                            </button>
+                        }
+                        else
+                        {
+                            <span class="text-muted small">No Trailer</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Trailer Modal -->
+<div class="modal fade" id="trailerModal" tabindex="-1" aria-labelledby="trailerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="trailerModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="stopTrailer()"></button>
+            </div>
+            <div class="modal-body">
+                <div class="ratio ratio-16x9">
+                    <iframe id="trailerIframe" src="" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        var trailerModal = document.getElementById('trailerModal');
+
+        // When modal opens
+        trailerModal.addEventListener('show.bs.modal', function (event) {
+            var button = event.relatedTarget;
+            var trailerUrl = button.getAttribute('data-trailer-url');
+            var movieTitle = button.getAttribute('data-movie-title');
+            var iframe = document.getElementById('trailerIframe');
+            var modalTitle = document.getElementById('trailerModalLabel');
+
+            modalTitle.textContent = movieTitle + " - Trailer";
+
+            // Only embed YouTube videos in iframe
+            if (trailerUrl.includes("youtube.com") || trailerUrl.includes("youtu.be")) {
+                if (trailerUrl.includes("watch?v=")) {
+                    trailerUrl = trailerUrl.replace("watch?v=", "embed/");
+                } else if (trailerUrl.includes("youtu.be/")) {
+                    trailerUrl = trailerUrl.replace("youtu.be/", "www.youtube.com/embed/");
+                }
+                iframe.src = trailerUrl + "?autoplay=1"; // autoplay when modal opens
+            } else {
+                // External links open in a new tab instead
+                window.open(trailerUrl, '_blank');
+                var modalInstance = bootstrap.Modal.getInstance(trailerModal);
+                modalInstance.hide();
+            }
+        });
+
+        // Stop video when modal closes
+        trailerModal.addEventListener('hidden.bs.modal', function () {
+            stopTrailer();
+        });
+
+        function stopTrailer() {
+            var iframe = document.getElementById('trailerIframe');
+            iframe.src = "";
+        }
+    </script>
+}

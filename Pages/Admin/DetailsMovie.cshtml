@@ -1,0 +1,76 @@
+﻿@page "{id:int}"
+@model Movies.Pages.Admin.DetailsMovieModel
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<IdentityUser> SignInManager
+
+@{
+    ViewData["Title"] = "Movie Details";
+
+    // Determine if the trailer is a YouTube embed link
+    bool isYouTubeEmbed = !string.IsNullOrEmpty(Model.Movie.TrailerUrl)
+                          && Model.Movie.TrailerUrl.Contains("youtube.com/embed");
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">@Model.Movie.Title</h2>
+
+    <div class="row mb-4">
+        <!-- Left Column: Poster -->
+        <div class="col-md-4 text-center">
+            @if (!string.IsNullOrEmpty(Model.Movie.ImagePath))
+            {
+                <img src="@Model.Movie.ImagePath" class="img-fluid rounded shadow mb-3" alt="@Model.Movie.Title">
+            }
+            else
+            {
+                <img src="/images/movies/default.jpg" class="img-fluid rounded shadow mb-3" alt="No Image">
+            }
+        </div>
+
+        <!-- Right Column: Details -->
+        <div class="col-md-8">
+            <p><strong>Director:</strong> @Model.Movie.Director?.Name</p>
+            <p><strong>Release Date:</strong> @Model.Movie.ReleaseDate?.ToString("yyyy-MM-dd")</p>
+            <p><strong>Description:</strong></p>
+            <p>@Model.Movie.Description</p>
+
+            <div class="mt-3">
+                <a asp-page="/Admin/EditMovie" asp-route-id="@Model.Movie.MovieId" class="btn btn-warning me-2">Edit Movie</a>
+
+                <form method="post" asp-page-handler="Delete" class="d-inline">
+                    <input type="hidden" name="id" value="@Model.Movie.MovieId" />
+                    <button type="submit" class="btn btn-danger"
+                            onclick="return confirm('Are you sure you want to delete this movie?')">
+                        Delete
+                    </button>
+                </form>
+
+                <a asp-page="/Movie/Index" class="btn btn-secondary ms-2">Back</a>
+            </div>
+
+            <!-- Watch Trailer Button -->
+            @if (!string.IsNullOrEmpty(Model.Movie.TrailerUrl))
+            {
+                <div class="mt-3">
+                    <a href="@Model.Movie.TrailerUrl" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                        Watch Trailer
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Embedded Trailer Section -->
+    @if (isYouTubeEmbed)
+    {
+        <div class="mt-4">
+            <h5>Trailer (Inline)</h5>
+            <div class="ratio ratio-16x9">
+                <iframe src="@Model.Movie.TrailerUrl" title="@Model.Movie.Title" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    }
+</div>

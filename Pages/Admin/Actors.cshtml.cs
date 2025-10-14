@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +7,7 @@ using Movies.Models;
 
 namespace Movies.Pages.Admin.Actors
 {
+    [Authorize(Roles = "Admin")]
     public class ActorsModel : PageModel
     {
         private readonly ApplicationDbContext _context;

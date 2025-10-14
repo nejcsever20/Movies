@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Movies.Data;
@@ -5,6 +6,8 @@ using Movies.Models;
 
 namespace Movies.Pages.Admin
 {
+    [Authorize(Roles = "Admin")]
+
     public class EditGenreModel : PageModel
     {
         private readonly ApplicationDbContext _context;

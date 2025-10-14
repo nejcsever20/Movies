@@ -24,28 +24,27 @@
             @foreach (var genre in Model.Genres)
             {
                 <div class="col">
-                    <div class="card h-100">
-                        <div class="card-body">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body d-flex flex-column">
                             <h5 class="card-title">@genre.Name</h5>
+
                             @if (genre.MovieGenres.Any())
                             {
-                                <p class="card-text">
-                                    Movies:
-                                    <ul>
-                                        @foreach (var mg in genre.MovieGenres)
-                                        {
-                                            <li>
-                                                <a asp-page="/Movie/Details" asp-route-id="@mg.Movie.MovieId">
-                                                    @mg.Movie.Title
-                                                </a>
-                                            </li>
-                                        }
-                                    </ul>
-                                </p>
+                                <p class="card-text mb-0"><strong>Movies:</strong></p>
+                                <ul class="list-unstyled ms-3">
+                                    @foreach (var mg in genre.MovieGenres)
+                                    {
+                                        <li>
+                                            <a asp-page="/Admin/DetailsMovie" asp-route-id="@mg.Movie.MovieId" class="text-decoration-none">
+                                                @mg.Movie.Title
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
                             }
                             else
                             {
-                                <p class="card-text text-muted">No movies in this genre.</p>
+                                <p class="card-text text-muted mt-auto">No movies in this genre.</p>
                             }
                         </div>
                     </div>

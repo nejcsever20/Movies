@@ -18,10 +18,12 @@ wwwroot\images\actors\dc8040fb-e2f8-45d9-9b2f-0d98346c2730.jpg
 wwwroot\images\actors\ef55c075-b665-440f-97cb-0587ec21c6f8.jpg
 wwwroot\images\movies\1650a0d9-de22-4ac7-89fe-a50abddf5b29.webp
 wwwroot\images\movies\3ccd6f38-1a46-4077-89ce-91f416050176.jpg
+wwwroot\images\movies\3f87615c-09dd-4712-b0eb-b6db9f9e2d14.jpg
 wwwroot\images\movies\4e55c6f1-c4bd-4fd8-bdcc-d16f8cd32d70.jpg
 wwwroot\images\movies\543887ce-ea9e-4fc5-aeec-b496b62284b9.jpg
 wwwroot\images\movies\599a8ae2-b37a-4619-8774-394496b13a58.jpg
 wwwroot\images\movies\5f468edd-0b33-4d99-8868-c7987add6ff9.jpg
+wwwroot\images\movies\614858d5-b404-4509-9eb7-544a5f3cffc7.jpg
 wwwroot\images\movies\6343b1f9-781a-4564-9643-98fac8e8d137.jpg
 wwwroot\images\movies\68543d23-39ea-4333-aba1-9f8b6def700e.jpg
 wwwroot\images\movies\6be6ffa8-c38a-4e04-8ee2-5fcaa7e01ed3.jpg

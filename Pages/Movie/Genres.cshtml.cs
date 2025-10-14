@@ -36,7 +36,7 @@ namespace Movies.Pages.Movie
                 .OrderBy(g => g.Name)
                 .ToListAsync();
 
-            // Optional: Remove duplicates from movies per genre if necessary
+            // Remove duplicate movies per genre if necessary
             foreach (var genre in Genres)
             {
                 genre.MovieGenres = genre.MovieGenres

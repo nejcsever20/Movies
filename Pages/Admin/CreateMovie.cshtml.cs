@@ -123,6 +123,7 @@ namespace Movies.Pages.Admin
                 string runtimeStr = worksheet.Cells[row, 4].Text.Trim();
                 string directorName = worksheet.Cells[row, 5].Text.Trim();
                 string actorsStr = worksheet.Cells[row, 6].Text.Trim();
+                string ratingStr = worksheet.Cells[row, 7].Text.Trim();
 
                 if (string.IsNullOrEmpty(title)) continue;
 
@@ -154,6 +155,10 @@ namespace Movies.Pages.Admin
                     if (actor != null)
                         movie.MovieActors.Add(new MovieActor { ActorId = actor.ActorId });
                 }
+
+                // Rating (converted to int)
+                if (decimal.TryParse(ratingStr, out var rating))
+                    movie.Rating = (int)Math.Round(rating);
 
                 _context.Movies.Add(movie);
             }

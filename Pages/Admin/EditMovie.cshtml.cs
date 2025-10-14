@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -53,6 +53,8 @@ namespace Movies.Pages.Admin
             movieInDb.Title = Movie.Title;
             movieInDb.Description = Movie.Description;
             movieInDb.ReleaseDate = Movie.ReleaseDate;
+            movieInDb.TrailerUrl = Movie.TrailerUrl;
+            movieInDb.Rating = Movie.Rating; // ✅ Added rating update
 
             // Handle new image upload
             if (imageFile != null && imageFile.Length > 0)

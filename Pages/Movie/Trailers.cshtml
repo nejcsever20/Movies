@@ -64,42 +64,62 @@
 
 @section Scripts {
     <script>
-        var trailerModal = document.getElementById('trailerModal');
-
-        // When modal opens
-        trailerModal.addEventListener('show.bs.modal', function (event) {
-            var button = event.relatedTarget;
-            var trailerUrl = button.getAttribute('data-trailer-url');
-            var movieTitle = button.getAttribute('data-movie-title');
+        document.addEventListener('DOMContentLoaded', function () {
+            var trailerModal = document.getElementById('trailerModal');
             var iframe = document.getElementById('trailerIframe');
             var modalTitle = document.getElementById('trailerModalLabel');
 
-            modalTitle.textContent = movieTitle + " - Trailer";
+            trailerModal.addEventListener('show.bs.modal', function (event) {
+                var button = event.relatedTarget;
+                var trailerUrl = button.getAttribute('data-trailer-url');
+                var movieTitle = button.getAttribute('data-movie-title');
 
-            // Only embed YouTube videos in iframe
-            if (trailerUrl.includes("youtube.com") || trailerUrl.includes("youtu.be")) {
-                if (trailerUrl.includes("watch?v=")) {
-                    trailerUrl = trailerUrl.replace("watch?v=", "embed/");
-                } else if (trailerUrl.includes("youtu.be/")) {
-                    trailerUrl = trailerUrl.replace("youtu.be/", "www.youtube.com/embed/");
+                modalTitle.textContent = movieTitle + " - Trailer";
+
+                // ✅ Normalize and embed YouTube URLs properly
+                if (trailerUrl.includes("youtube.com") || trailerUrl.includes("youtu.be")) {
+                    if (trailerUrl.includes("watch?v=")) {
+                        trailerUrl = trailerUrl.replace("watch?v=", "embed/");
+                    } else if (trailerUrl.includes("youtu.be/")) {
+                        trailerUrl = trailerUrl.replace("youtu.be/", "www.youtube.com/embed/");
+                    }
+
+                    // ✅ Add autoplay, mute (for browser policy), and correct permissions
+                    iframe.src = trailerUrl + "?autoplay=1&mute=1";
+                    iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+                    iframe.setAttribute("allowfullscreen", true);
                 }
-                iframe.src = trailerUrl + "?autoplay=1"; // autoplay when modal opens
-            } else {
-                // External links open in a new tab instead
-                window.open(trailerUrl, '_blank');
-                var modalInstance = bootstrap.Modal.getInstance(trailerModal);
-                modalInstance.hide();
+                // ✅ Support for local or other trailers (MP4)
+                else if (trailerUrl.endsWith(".mp4") || trailerUrl.endsWith(".webm")) {
+                    iframe.outerHTML = `
+                        <video id="trailerVideo" controls autoplay class="w-100 rounded">
+                            <source src="${trailerUrl}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    `;
+                }
+                // ✅ Fallback: open in a new tab
+                else {
+                    window.open(trailerUrl, '_blank');
+                    var modalInstance = bootstrap.Modal.getInstance(trailerModal);
+                    modalInstance.hide();
+                }
+            });
+
+            // ✅ Stop trailer when modal closes
+            trailerModal.addEventListener('hidden.bs.modal', function () {
+                stopTrailer();
+            });
+
+            function stopTrailer() {
+                var iframe = document.getElementById('trailerIframe');
+                if (iframe) iframe.src = "";
+                var video = document.getElementById('trailerVideo');
+                if (video) {
+                    video.pause();
+                    video.currentTime = 0;
+                }
             }
         });
-
-        // Stop video when modal closes
-        trailerModal.addEventListener('hidden.bs.modal', function () {
-            stopTrailer();
-        });
-
-        function stopTrailer() {
-            var iframe = document.getElementById('trailerIframe');
-            iframe.src = "";
-        }
     </script>
 }

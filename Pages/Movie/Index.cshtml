@@ -21,6 +21,18 @@
 <div class="container mt-4">
     <h2 class="mb-3">Movies</h2>
 
+    <!-- Search Bar -->
+    <form method="get" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="SearchTerm" value="@Model.SearchTerm" class="form-control" placeholder="Search movies by title..." />
+            <button type="submit" class="btn btn-primary">Search</button>
+            @if (!string.IsNullOrWhiteSpace(Model.SearchTerm))
+            {
+                <a asp-page="/Movie/Index" class="btn btn-outline-secondary">Clear</a>
+            }
+        </div>
+    </form>
+
     @if (isAdmin)
     {
         <div class="mb-3">
@@ -29,11 +41,10 @@
     }
 
     <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-3">
-        @foreach (var movie in Model.Movies)
+        @foreach (var movie in Model.MoviesList)
         {
             <div class="col">
                 <div class="card h-100 shadow-sm">
-                    <!-- Clickable movie cover -->
                     <a asp-page="/Admin/DetailsMovie" asp-route-id="@movie.MovieId" class="text-decoration-none text-dark">
                         @if (!string.IsNullOrEmpty(movie.ImagePath))
                         {
@@ -49,13 +60,11 @@
                         </div>
                     </a>
 
-                    <!-- Action buttons -->
                     <div class="card-footer text-center bg-light">
                         <a asp-page="/Admin/DetailsMovie" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-primary me-1">
                             Details
                         </a>
 
-                        @* Trailer Button triggers modal *@
                         @if (!string.IsNullOrEmpty(movie.TrailerUrl))
                         {
                             <button class="btn btn-sm btn-outline-dark me-1"
@@ -93,14 +102,17 @@
             @for (int i = 1; i <= Model.TotalPages; i++)
             {
                 <li class="page-item @(i == Model.PageNumber ? "active" : "")">
-                    <a class="page-link" asp-page="/Movie/Index" asp-route-pageNumber="@i">@i</a>
+                    <a class="page-link"
+                       asp-page="/Movie/Index"
+                       asp-route-pageNumber="@i"
+                       asp-route-SearchTerm="@Model.SearchTerm">@i</a>
                 </li>
             }
         </ul>
     </nav>
 </div>
 
-@* Trailer Modal *@
+<!-- Trailer Modal -->
 <div class="modal fade" id="trailerModal" tabindex="-1" aria-labelledby="trailerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
@@ -119,7 +131,6 @@
 
 @section Scripts {
     <script>
-        // Set trailer URL dynamically when modal opens
         var trailerModal = document.getElementById('trailerModal');
         trailerModal.addEventListener('show.bs.modal', function (event) {
             var button = event.relatedTarget;
@@ -130,10 +141,20 @@
             var iframe = trailerModal.querySelector('#trailerIframe');
 
             modalTitle.textContent = movieTitle + " - Trailer";
-            iframe.src = trailerUrl;
+
+            // Convert YouTube links to embed format
+            if (trailerUrl.includes("youtube.com") || trailerUrl.includes("youtu.be")) {
+                if (trailerUrl.includes("watch?v=")) {
+                    trailerUrl = trailerUrl.replace("watch?v=", "embed/");
+                } else if (trailerUrl.includes("youtu.be/")) {
+                    trailerUrl = trailerUrl.replace("youtu.be/", "www.youtube.com/embed/");
+                }
+                iframe.src = trailerUrl + "?autoplay=1&mute=1";
+            } else {
+                iframe.src = trailerUrl;
+            }
         });
 
-        // Stop trailer when modal closes
         trailerModal.addEventListener('hidden.bs.modal', function () {
             var iframe = document.getElementById('trailerIframe');
             iframe.src = "";

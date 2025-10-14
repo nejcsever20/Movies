@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Movies.Data;
@@ -18,11 +19,23 @@ namespace Movies.Pages.Admin
 
         public List<Actor> Actors { get; set; } = new List<Actor>();
 
+        [BindProperty(SupportsGet = true)]
+        public string? SearchTerm { get; set; }
+
         public async Task OnGetAsync()
         {
-            var actors = await _context.Actors
+            var actorsQuery = _context.Actors
                 .Include(a => a.MovieActors)
                 .ThenInclude(ma => ma.Movie)
+                .AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(SearchTerm))
+            {
+                actorsQuery = actorsQuery
+                    .Where(a => a.Name.Contains(SearchTerm));
+            }
+
+            var actors = await actorsQuery
                 .OrderBy(a => a.Name)
                 .ToListAsync();
 

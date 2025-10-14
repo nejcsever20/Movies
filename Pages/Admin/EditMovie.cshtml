@@ -49,6 +49,13 @@
                     <span asp-validation-for="Movie.ReleaseDate" class="text-danger"></span>
                 </div>
 
+                <!-- NEW: Rating -->
+                <div class="mb-3">
+                    <label asp-for="Movie.Rating" class="form-label">Rating</label>
+                    <input asp-for="Movie.Rating" type="number" class="form-control" min="0" max="10" step="1" />
+                    <span asp-validation-for="Movie.Rating" class="text-danger"></span>
+                </div>
+
                 <button type="submit" class="btn btn-success">Save Changes</button>
                 <a asp-page="/Admin/DetailsMovie" asp-route-id="@Model.Movie.MovieId" class="btn btn-secondary ms-2">Cancel</a>
             </div>

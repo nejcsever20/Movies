@@ -1,0 +1,40 @@
+﻿@page
+@model Movies.Pages.Admin.MoviesModel
+@{
+    ViewData["Title"] = "Manage Movies";
+}
+
+<div class="container mt-4">
+    <h2>Manage Movies</h2>
+
+    @if (!Model.Movies.Any())
+    {
+        <div class="alert alert-info">No movies found.</div>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var movie in Model.Movies)
+                {
+                    <tr>
+                        <td>@movie.Title</td>
+                        <td>
+                            <a asp-page="/Admin/EditMovie" asp-route-id="@movie.MovieId" class="btn btn-warning btn-sm me-1">Edit</a>
+                            <form method="post" asp-page-handler="DeleteMovie" class="d-inline">
+                                <input type="hidden" name="movieId" value="@movie.MovieId" />
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Delete this movie?');">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

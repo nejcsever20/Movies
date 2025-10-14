@@ -1,0 +1,40 @@
+﻿@page
+@model Movies.Pages.Admin.ActorsModel
+@{
+    ViewData["Title"] = "Manage Actors";
+}
+
+<div class="container mt-4">
+    <h2>Manage Actors</h2>
+
+    @if (!Model.Actors.Any())
+    {
+        <div class="alert alert-info">No actors found.</div>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var actor in Model.Actors)
+                {
+                    <tr>
+                        <td>@actor.Name</td>
+                        <td>
+                            <a asp-page="/Admin/EditActor" asp-route-id="@actor.ActorId" class="btn btn-warning btn-sm me-1">Edit</a>
+                            <form method="post" asp-page-handler="DeleteActor" class="d-inline">
+                                <input type="hidden" name="actorId" value="@actor.ActorId" />
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Delete this actor?');">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

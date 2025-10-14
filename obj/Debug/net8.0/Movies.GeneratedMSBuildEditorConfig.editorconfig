@@ -196,6 +196,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0b3JzXEFjdG9ycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Uporabnik/source/repos/Movies/Movies/Pages/Admin/Actors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWN0b3JzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Uporabnik/source/repos/Movies/Movies/Pages/Admin/CreateActor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ3JlYXRlQWN0b3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -216,8 +220,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cRGlyZWN0b3JzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Uporabnik/source/repos/Movies/Movies/Pages/Admin/EditActor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cRWRpdEFjdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Uporabnik/source/repos/Movies/Movies/Pages/Admin/EditGenre.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cRWRpdEdlbnJlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Uporabnik/source/repos/Movies/Movies/Pages/Admin/EditMovie.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cRWRpdE1vdmllLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Uporabnik/source/repos/Movies/Movies/Pages/Admin/EditUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cRWRpdFVzZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Uporabnik/source/repos/Movies/Movies/Pages/Admin/Genre.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cR2VucmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Uporabnik/source/repos/Movies/Movies/Pages/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Uporabnik/source/repos/Movies/Movies/Pages/Admin/Movies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cTW92aWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Uporabnik/source/repos/Movies/Movies/Pages/Admin/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Uporabnik/source/repos/Movies/Movies/Pages/Dashboard/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGFzaGJvYXJkXERhc2hib2FyZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Uporabnik/source/repos/Movies/Movies/Pages/Error.cshtml]
@@ -270,6 +306,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Uporabnik/source/repos/Movies/Movies/Pages/Watchlist/PlannedWatchlist.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2F0Y2hsaXN0XFBsYW5uZWRXYXRjaGxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Uporabnik/source/repos/Movies/Movies/Pages/Watchlist/Recommendations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV2F0Y2hsaXN0XFJlY29tbWVuZGF0aW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Uporabnik/source/repos/Movies/Movies/Pages/Watchlist/Watchlist.cshtml]

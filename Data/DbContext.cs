@@ -30,6 +30,8 @@ namespace Movies.Data
         public DbSet<Message> Messages { get; set; }
 
         public DbSet<Notification> Notifications { get; set; }
+
+        public DbSet<MovieLike> MovieLikes { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

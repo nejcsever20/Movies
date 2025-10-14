@@ -78,10 +78,21 @@
 
                         @if (SignInManager.IsSignedIn(User))
                         {
+                            var currentUser = await UserManager.GetUserAsync(User);
+                            bool userLiked = await Model.UserLikedMovieAsync(currentUser.Id, movie.MovieId);
+
                             <form method="post" asp-page-handler="AddToWatchlist" class="d-inline">
                                 <input type="hidden" name="movieId" value="@movie.MovieId" />
                                 <button type="submit" class="btn btn-sm btn-outline-success">
                                     Add to Watchlist
+                                </button>
+                            </form>
+
+                            <!-- Like/Unlike Button -->
+                            <form method="post" class="d-inline" asp-page-handler="@(userLiked ? "RemoveLike" : "LikeMovie")">
+                                <input type="hidden" name="movieId" value="@movie.MovieId" />
+                                <button type="submit" class="btn btn-sm btn-outline-warning">
+                                    ⭐ @await Model.GetLikesCountAsync(movie.MovieId)
                                 </button>
                             </form>
                         }

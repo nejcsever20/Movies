@@ -1,0 +1,40 @@
+﻿@page
+@model Movies.Pages.Admin.GenresModel
+@{
+    ViewData["Title"] = "Manage Genres";
+}
+
+<div class="container mt-4">
+    <h2>Manage Genres</h2>
+
+    @if (!Model.Genres.Any())
+    {
+        <div class="alert alert-info">No genres found.</div>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var genre in Model.Genres)
+                {
+                    <tr>
+                        <td>@genre.Name</td>
+                        <td>
+                            <a asp-page="/Admin/EditGenre" asp-route-id="@genre.GenreId" class="btn btn-warning btn-sm me-1">Edit</a>
+                            <form method="post" asp-page-handler="DeleteGenre" class="d-inline">
+                                <input type="hidden" name="genreId" value="@genre.GenreId" />
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Delete this genre?');">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

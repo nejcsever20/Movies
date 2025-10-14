@@ -50,7 +50,16 @@
         <ul class="list-group mb-3">
             @foreach (var director in Model.Directors)
             {
-                <li class="list-group-item">@director.Name</li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    @director.Name
+                    <div>
+                        <a asp-page="/Admin/EditDirector" asp-route-id="@director.DirectorId" class="btn btn-warning btn-sm me-1">Edit</a>
+                        <form method="post" asp-page-handler="DeleteDirector" class="d-inline">
+                            <input type="hidden" name="directorId" value="@director.DirectorId" />
+                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Delete this director?');">Delete</button>
+                        </form>
+                    </div>
+                </li>
             }
         </ul>
 

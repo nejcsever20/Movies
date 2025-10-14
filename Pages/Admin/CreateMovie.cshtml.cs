@@ -32,7 +32,7 @@ namespace Movies.Pages.Admin
         [BindProperty]
         public IFormFile? ExcelFile { get; set; }
 
-        public IList<Director> Directors { get; set; } = new List<Director>();
+        public IList<Movies.Models.Director> Directors { get; set; } = new List<Movies.Models.Director>();
         public IList<Genre> Genres { get; set; } = new List<Genre>();
         public IList<Actor> Actors { get; set; } = new List<Actor>();
 

@@ -1,0 +1,171 @@
+﻿@page
+@model Movies.Pages.Dashboard.DashboardModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center mb-4">🎬 Dashboard</h1>
+
+    <!-- USER SECTIONS -->
+    <div class="user-sections">
+
+        <!-- Watchlist -->
+        <section class="mb-5">
+            <h3 class="mb-3">My Watchlist</h3>
+            @if (!Model.Watchlist.Any())
+            {
+                <div class="alert alert-info">No movies in your watchlist.</div>
+            }
+            else
+            {
+                <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+                    @foreach (var movie in Model.Watchlist)
+                    {
+                        <div class="col">
+                            <div class="card h-100 shadow-sm movie-card">
+                                <a asp-page="/Movie/Details" asp-route-id="@movie.MovieId">
+                                    <img src="@(!string.IsNullOrEmpty(movie.ImagePath) ? movie.ImagePath : "/images/movies/default.jpg")" class="card-img-top" style="height: 250px; object-fit: cover;" />
+                                </a>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">@movie.Title</h5>
+                                    <form method="post" asp-page-handler="PlanMovie" class="mt-2">
+                                        <input type="hidden" name="movieId" value="@movie.MovieId" />
+                                        <button type="submit" class="btn btn-sm btn-warning w-100">Plan to Watch</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </section>
+
+        <!-- Planned Watchlist -->
+        <section class="mb-5">
+            <h3 class="mb-3">Planned Watchlist</h3>
+            @if (!Model.PlannedWatchlist.Any())
+            {
+                <div class="alert alert-info">No movies planned yet.</div>
+            }
+            else
+            {
+                <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+                    @foreach (var movie in Model.PlannedWatchlist)
+                    {
+                        <div class="col">
+                            <div class="card h-100 shadow-sm movie-card">
+                                <a asp-page="/Movie/Details" asp-route-id="@movie.MovieId">
+                                    <img src="@(!string.IsNullOrEmpty(movie.ImagePath) ? movie.ImagePath : "/images/movies/default.jpg")" class="card-img-top" style="height: 250px; object-fit: cover;" />
+                                </a>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">@movie.Title</h5>
+                                    <span class="badge bg-info">Planned</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </section>
+
+        <!-- Recommendations -->
+        <section class="mb-5">
+            <h3 class="mb-3">Recommendations</h3>
+            @if (!Model.Recommendations.Any())
+            {
+                <div class="alert alert-info">No recommendations yet.</div>
+            }
+            else
+            {
+                <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+                    @foreach (var movie in Model.Recommendations)
+                    {
+                        <div class="col">
+                            <div class="card h-100 shadow-sm movie-card">
+                                <a asp-page="/Movie/Details" asp-route-id="@movie.MovieId">
+                                    <img src="@(!string.IsNullOrEmpty(movie.ImagePath) ? movie.ImagePath : "/images/movies/default.jpg")" class="card-img-top" style="height: 250px; object-fit: cover;" />
+                                </a>
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">@movie.Title</h5>
+                                    <span class="badge bg-success">Recommended</span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+        </section>
+    </div>
+
+    <!-- ADMIN SECTIONS -->
+    <div class="admin-sections mt-5">
+        <h2 class="text-center mb-4">Admin Overview</h2>
+
+        <!-- Users -->
+        <section class="mb-5">
+            <h4>All Users</h4>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var u in Model.AllUsers)
+                        {
+                            <tr>
+                                <td>@u.UserName</td>
+                                <td>@u.Email</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- All Movies -->
+        <section class="mb-5">
+            <h4>All Movies</h4>
+            <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
+                @foreach (var movie in Model.AllMovies)
+                {
+                    <div class="col">
+                        <div class="card h-100 shadow-sm movie-card">
+                            <img src="@(!string.IsNullOrEmpty(movie.ImagePath) ? movie.ImagePath : "/images/movies/default.jpg")" class="card-img-top" style="height: 200px; object-fit: cover;" />
+                            <div class="card-body text-center">
+                                <h5 class="card-title">@movie.Title</h5>
+                                <small>Director: @movie.Director?.Name</small><br />
+                                <small>Genres: @string.Join(", ", movie.MovieGenres.Select(g => g.Genre!.Name))</small>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </section>
+
+        <!-- Directors -->
+        <section class="mb-5">
+            <h4>All Directors</h4>
+            <ul class="list-group">
+                @foreach (var d in Model.AllDirectors)
+                {
+                    <li class="list-group-item">@d.Name</li>
+                }
+            </ul>
+        </section>
+
+        <!-- Genres -->
+        <section class="mb-5">
+            <h4>All Genres</h4>
+            <ul class="list-group">
+                @foreach (var g in Model.AllGenres)
+                {
+                    <li class="list-group-item">@g.Name</li>
+                }
+            </ul>
+        </section>
+    </div>
+</div>

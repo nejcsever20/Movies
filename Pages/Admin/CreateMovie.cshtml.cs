@@ -53,8 +53,9 @@ namespace Movies.Pages.Admin
             NewMovie.MovieActors ??= new List<MovieActor>();
             NewMovie.Reviews ??= new List<Review>();
             NewMovie.Ratings ??= new List<Rating>();
-            NewMovie.Watchlists ??= new List<Watchlist>();
+            NewMovie.Watchlists ??= new List<Movies.Models.Watchlist>(); // fully qualified
             NewMovie.Photos ??= new List<Photo>();
+
 
             // Handle image upload
             if (ImageFile != null && ImageFile.Length > 0)

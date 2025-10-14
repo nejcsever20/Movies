@@ -1,0 +1,53 @@
+﻿@page
+@model Movies.Pages.Watchlist.PlannedWatchlistModel
+@{
+    ViewData["Title"] = "Planned Watchlist";
+}
+
+<div class="container mt-4">
+    <h2>Planned Watchlist</h2>
+
+    @if (!Model.Movies.Any())
+    {
+        <div class="alert alert-info">You have no movies in your planned watchlist yet.</div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
+            @foreach (var movie in Model.Movies)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <a asp-page="/Movie/Details" asp-route-id="@movie.MovieId">
+                            @if (!string.IsNullOrEmpty(movie.ImagePath))
+                            {
+                                <img src="@movie.ImagePath" class="card-img-top" alt="@movie.Title" style="height: 250px; object-fit: cover;">
+                            }
+                            else
+                            {
+                                <img src="/images/movies/default.jpg" class="card-img-top" alt="No Image" style="height: 250px; object-fit: cover;">
+                            }
+                        </a>
+
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-center">@movie.Title</h5>
+                            @if (!string.IsNullOrEmpty(movie.Description))
+                            {
+                                <p class="card-text">@movie.Description</p>
+                            }
+
+                            <div class="mt-auto d-flex justify-content-between">
+                                <a asp-page="/Admin/DetailsMovie" asp-route-id="@movie.MovieId" class="btn btn-primary btn-sm">View Details</a>
+
+                                <form method="post" asp-page-handler="Remove" class="d-inline">
+                                    <input type="hidden" name="movieId" value="@movie.MovieId" />
+                                    <button type="submit" class="btn btn-danger btn-sm">Remove</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

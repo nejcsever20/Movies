@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Movies.Data;
 
@@ -10,9 +11,11 @@ using Movies.Data;
 namespace Movies.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251014111525_AddWatchlistAndRemoveWatchlist")]
+    partial class AddWatchlistAndRemoveWatchlist
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.11");
@@ -528,9 +531,6 @@ namespace Movies.Migrations
 
                     b.Property<DateTime>("AddedAt")
                         .HasColumnType("TEXT");
-
-                    b.Property<bool>("IsPlanned")
-                        .HasColumnType("INTEGER");
 
                     b.Property<int>("MovieId")
                         .HasColumnType("INTEGER");

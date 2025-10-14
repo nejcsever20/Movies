@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Movies.Data;
@@ -9,14 +10,15 @@ namespace Movies.Pages.Movie
     public class IndexModel : PageModel
     {
         private readonly ApplicationDbContext _context;
-        private IList<Models.Movie> moviesList = default!;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public IndexModel(ApplicationDbContext context)
+        public IndexModel(ApplicationDbContext context, UserManager<IdentityUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
-        public IList<Movies.Models.Movie> MoviesList { get => moviesList; set => moviesList = value; }
+        public IList<Movies.Models.Movie> MoviesList { get; set; } = new List<Movies.Models.Movie>();
         public int PageNumber { get; set; } = 1;
         public int TotalPages { get; set; }
 
@@ -46,6 +48,30 @@ namespace Movies.Pages.Movie
                 .Skip((PageNumber - 1) * pageSize)
                 .Take(pageSize)
                 .ToListAsync();
+        }
+
+        public async Task<IActionResult> OnPostAddToWatchlistAsync(int movieId)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+                return Challenge(); // redirect to login
+
+            var existing = await _context.Watchlists
+                .FirstOrDefaultAsync(w => w.UserId == user.Id && w.MovieId == movieId);
+
+            if (existing == null)
+            {
+                var watchlistEntry = new Movies.Models.Watchlist
+                {
+                    UserId = user.Id,
+                    MovieId = movieId
+                };
+                _context.Watchlists.Add(watchlistEntry);
+                await _context.SaveChangesAsync();
+            }
+
+            TempData["SuccessMessage"] = "Movie added to your watchlist!";
+            return RedirectToPage();
         }
     }
 }

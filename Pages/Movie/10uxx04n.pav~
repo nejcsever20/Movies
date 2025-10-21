@@ -46,8 +46,8 @@
             <div class="col">
                 <div class="card h-100 shadow-sm">
 
-                    <!-- Public details page -->
-                    <a asp-page="/Movie/Details" asp-route-id="@movie.MovieId" class="text-decoration-none text-dark">
+                    <!-- Link to PUBLIC details page -->
+                    <a asp-page="/Admin/DetailsMovie" asp-route-id="@movie.MovieId" class="text-decoration-none text-dark">
                         @if (!string.IsNullOrEmpty(movie.ImagePath))
                         {
                             <img src="@movie.ImagePath" alt="@movie.Title" class="card-img-top" style="height: 250px; object-fit: cover;">
@@ -63,19 +63,9 @@
                     </a>
 
                     <div class="card-footer text-center bg-light d-flex flex-wrap justify-content-center gap-1">
-                        <!-- Public Details -->
-                        <a asp-page="/Movie/Details" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-primary">
+                        <!-- Details (publicly visible) -->
+                        <a asp-page="/Admin/DetailsMovie" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-primary">
                             Details
-                        </a>
-
-                        <!-- Comments -->
-                        <a asp-page="/Movie/Comments" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-info">
-                            Comments
-                        </a>
-
-                        <!-- User Reviews -->
-                        <a asp-page="/Movie/Reviews" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-secondary">
-                            User Reviews
                         </a>
 
                         <!-- Trailer Button -->
@@ -90,7 +80,7 @@
                             </button>
                         }
 
-                        <!-- Watchlist + Likes (signed-in users only) -->
+                        <!-- Watchlist + Likes (only signed-in users) -->
                         @if (SignInManager.IsSignedIn(User))
                         {
                             var currentUser = await UserManager.GetUserAsync(User);
@@ -104,7 +94,7 @@
                                 </button>
                             </form>
 
-                            <!-- Like / Unlike -->
+                            <!-- Like/Unlike -->
                             <form method="post" class="d-inline" asp-page-handler="@(userLiked ? "RemoveLike" : "LikeMovie")">
                                 <input type="hidden" name="movieId" value="@movie.MovieId" />
                                 <button type="submit" class="btn btn-sm btn-outline-warning">
@@ -174,6 +164,7 @@
             var button = event.relatedTarget;
             var trailerUrl = button.getAttribute('data-trailer-url');
             var movieTitle = button.getAttribute('data-movie-title');
+
             var modalTitle = trailerModal.querySelector('.modal-title');
             var iframe = trailerModal.querySelector('#trailerIframe');
 

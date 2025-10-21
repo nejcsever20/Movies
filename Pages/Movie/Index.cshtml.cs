@@ -25,33 +25,43 @@ namespace Movies.Pages.Movie
         [BindProperty(SupportsGet = true)]
         public string? SearchTerm { get; set; }
 
-        public async Task OnGetAsync(int pageNumber = 1)
+        // Publicly accessible movie list
+        public async Task<IActionResult> OnGetAsync(int pageNumber = 1)
         {
             PageNumber = pageNumber;
             int pageSize = 40;
 
-            var query = _context.Movies.Include(m => m.Director).AsQueryable();
+            var query = _context.Movies
+                .Include(m => m.Director)
+                .AsQueryable();
 
             if (!string.IsNullOrWhiteSpace(SearchTerm))
+            {
                 query = query.Where(m => m.Title.Contains(SearchTerm));
+            }
 
             query = query.OrderByDescending(m => m.ReleaseDate);
 
             int totalMovies = await query.CountAsync();
             TotalPages = (int)Math.Ceiling(totalMovies / (double)pageSize);
 
-            MoviesList = await query.Skip((PageNumber - 1) * pageSize)
-                                    .Take(pageSize)
-                                    .ToListAsync();
+            MoviesList = await query
+                .Skip((PageNumber - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            return Page();
         }
 
         // Add to Watchlist
         public async Task<IActionResult> OnPostAddToWatchlistAsync(int movieId)
         {
             var user = await _userManager.GetUserAsync(User);
-            if (user == null) return Challenge();
+            if (user == null)
+                return Challenge();
 
-            var existing = await _context.Watchlists.FirstOrDefaultAsync(w => w.UserId == user.Id && w.MovieId == movieId);
+            var existing = await _context.Watchlists
+                .FirstOrDefaultAsync(w => w.UserId == user.Id && w.MovieId == movieId);
 
             if (existing == null)
             {
@@ -71,9 +81,12 @@ namespace Movies.Pages.Movie
         public async Task<IActionResult> OnPostLikeMovieAsync(int movieId)
         {
             var user = await _userManager.GetUserAsync(User);
-            if (user == null) return Challenge();
+            if (user == null)
+                return Challenge();
 
-            var existingLike = await _context.MovieLikes.FirstOrDefaultAsync(l => l.UserId == user.Id && l.MovieId == movieId);
+            var existingLike = await _context.MovieLikes
+                .FirstOrDefaultAsync(l => l.UserId == user.Id && l.MovieId == movieId);
+
             if (existingLike == null)
             {
                 _context.MovieLikes.Add(new MovieLike
@@ -91,9 +104,12 @@ namespace Movies.Pages.Movie
         public async Task<IActionResult> OnPostRemoveLikeAsync(int movieId)
         {
             var user = await _userManager.GetUserAsync(User);
-            if (user == null) return Challenge();
+            if (user == null)
+                return Challenge();
 
-            var existingLike = await _context.MovieLikes.FirstOrDefaultAsync(l => l.UserId == user.Id && l.MovieId == movieId);
+            var existingLike = await _context.MovieLikes
+                .FirstOrDefaultAsync(l => l.UserId == user.Id && l.MovieId == movieId);
+
             if (existingLike != null)
             {
                 _context.MovieLikes.Remove(existingLike);
@@ -103,13 +119,11 @@ namespace Movies.Pages.Movie
             return RedirectToPage();
         }
 
-        // Get Likes Count
         public async Task<int> GetLikesCountAsync(int movieId)
         {
             return await _context.MovieLikes.CountAsync(l => l.MovieId == movieId);
         }
 
-        // Check if user liked a movie
         public async Task<bool> UserLikedMovieAsync(string userId, int movieId)
         {
             return await _context.MovieLikes.AnyAsync(l => l.UserId == userId && l.MovieId == movieId);

@@ -1,0 +1,73 @@
+﻿@page
+@model Movies.Pages.Movie.ReviewsModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+
+@{
+    ViewData["Title"] = "User Reviews";
+}
+
+<div class="container mt-4">
+    <h3>User Reviews for: <span class="text-primary">@Model.Movie?.Title</span></h3>
+
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <form method="post" class="mb-4">
+            <div class="mb-3">
+                <label>Rating (1–10)</label>
+                <input asp-for="NewReview.Rating" type="number" min="1" max="10" class="form-control w-25" />
+            </div>
+            <div class="mb-3">
+                <textarea asp-for="NewReview.Content" class="form-control" rows="4" placeholder="Write your review..."></textarea>
+                <span asp-validation-for="NewReview.Content" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Post Review</button>
+        </form>
+    }
+    else
+    {
+        <p><a href="/Identity/Account/Login">Login</a> to post a review.</p>
+    }
+
+    <div class="mt-4">
+        @if (Model.Reviews.Any())
+        {
+            @foreach (var review in Model.Reviews)
+            {
+                var likes = review.Reactions.Count(r => r.IsLike);
+                var dislikes = review.Reactions.Count(r => !r.IsLike);
+
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h6>Rating: @review.Rating/10</h6>
+                        <p>@review.Content</p>
+                        <small class="text-muted">By @review.UserId on @review.CreatedAt.ToLocalTime()</small>
+                        <div class="mt-2">
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                <form method="post" asp-page-handler="React" class="d-inline">
+                                    <input type="hidden" name="reviewId" value="@review.ReviewId" />
+                                    <input type="hidden" name="isLike" value="true" />
+                                    <button type="submit" class="btn btn-sm btn-outline-success">👍 @likes</button>
+                                </form>
+                                <form method="post" asp-page-handler="React" class="d-inline">
+                                    <input type="hidden" name="reviewId" value="@review.ReviewId" />
+                                    <input type="hidden" name="isLike" value="false" />
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">👎 @dislikes</button>
+                                </form>
+                            }
+                            else
+                            {
+                                <span>👍 @likes | 👎 @dislikes</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p class="text-muted">No reviews yet.</p>
+        }
+    </div>
+</div>

@@ -1,9 +1,12 @@
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Movies.Data;
 using Movies.Models;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Movies.Pages.Watchlist
 {
@@ -26,24 +29,37 @@ namespace Movies.Pages.Watchlist
             if (user == null)
                 return Challenge();
 
-            // Get the list of movie IDs in the user's watchlist
+            // ✅ Get the user's watchlist movie IDs
             var watchlistMovieIds = await _context.Watchlists
                 .Where(w => w.UserId == user.Id)
                 .Select(w => w.MovieId)
                 .ToListAsync();
 
-            // Get recommended movies: any movie that shares the same genres as the user's watchlist movies
+            if (!watchlistMovieIds.Any())
+            {
+                Recommendations = new List<Movies.Models.Movie>();
+                return Page();
+            }
+
+            // ✅ Get genres from movies in the user's watchlist
             var watchlistGenres = await _context.MovieGenres
                 .Where(mg => watchlistMovieIds.Contains(mg.MovieId))
                 .Select(mg => mg.GenreId)
                 .Distinct()
                 .ToListAsync();
 
-            // Fetch movies that share these genres but are not already in the watchlist
+            if (!watchlistGenres.Any())
+            {
+                Recommendations = new List<Movies.Models.Movie>();
+                return Page();
+            }
+
+            // ✅ Fetch movies that share genres but are not already in watchlist
             Recommendations = await _context.Movies
                 .Include(m => m.MovieGenres)
-                .Where(m => m.MovieGenres.Any(mg => watchlistGenres.Contains(mg.GenreId)) &&
-                            !watchlistMovieIds.Contains(m.MovieId))
+                    .ThenInclude(mg => mg.Genre)
+                .Where(m => m.MovieGenres.Any(mg => watchlistGenres.Contains(mg.GenreId))
+                            && !watchlistMovieIds.Contains(m.MovieId))
                 .OrderBy(m => m.Title)
                 .ToListAsync();
 

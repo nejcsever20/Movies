@@ -32,6 +32,10 @@ namespace Movies.Data
         public DbSet<Notification> Notifications { get; set; }
 
         public DbSet<MovieLike> MovieLikes { get; set; }
+        public DbSet<MovieComment> MovieComments { get; set; }
+        public DbSet<MovieReview> MovieReviews { get; set; }
+        public DbSet<ReviewReaction> ReviewReactions { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

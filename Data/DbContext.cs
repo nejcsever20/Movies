@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Movies.Models;
 using System.IO;
+using System.Reflection.Emit;
 
 namespace Movies.Data
 {
@@ -33,6 +34,8 @@ namespace Movies.Data
 
         public DbSet<MovieLike> MovieLikes { get; set; }
         public DbSet<MovieComment> MovieComments { get; set; }
+        public DbSet<CommentLike> CommentLikes { get; set; }
+
         public DbSet<MovieReview> MovieReviews { get; set; }
         public DbSet<ReviewReaction> ReviewReactions { get; set; }
 
@@ -81,6 +84,19 @@ namespace Movies.Data
             builder.Entity<Watchlist>()
                 .HasIndex(w => new { w.MovieId, w.UserId })
                 .IsUnique();
+
+            builder.Entity<MovieReview>().HasKey(r => r.MovieReviewId);
+            builder.Entity<ReviewReaction>().HasKey(r => r.ReviewReactionId);
+
+            builder.Entity<ReviewReaction>()
+                .HasOne(r => r.MovieReview)
+                .WithMany(m => m.Reactions)
+                .HasForeignKey(r => r.MovieReviewId);
+
+            builder.Entity<ReviewReaction>()
+                .HasOne(r => r.User)
+                .WithMany()
+                .HasForeignKey(r => r.UserId);
         }
     }
 }

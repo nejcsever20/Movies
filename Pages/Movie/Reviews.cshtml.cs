@@ -19,76 +19,61 @@ namespace Movies.Pages.Movie
         }
 
         [BindProperty]
-        public MovieReview NewReview { get; set; } = new MovieReview();
+        public MovieReview NewReview { get; set; } = new();
+
+        [BindProperty(SupportsGet = true)]
+        public int Id { get; set; }  // MovieId
 
         public Movies.Models.Movie? Movie { get; set; }
         public List<MovieReview> Reviews { get; set; } = new();
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public async Task<IActionResult> OnGetAsync()
         {
-            Movie = await _context.Movies.FindAsync(id);
+            Movie = await _context.Movies.FindAsync(Id);
             if (Movie == null) return NotFound();
 
             Reviews = await _context.MovieReviews
-                .Include(r => r.Reactions)
-                .Where(r => r.MovieId == id)
+                .Include(r=>r.Reactions)
+                .Include(r=>r.User)
+                .Where(r=>r.MovieId == Id)
                 .OrderByDescending(r => r.CreatedAt)
                 .ToListAsync();
 
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int id)
+        public async Task<IActionResult> OnPostAsync()
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null) return Challenge();
 
-            if (!ModelState.IsValid)
-            {
-                await OnGetAsync(id);
-                return Page();
-            }
+            Movie = await _context.Movies.FindAsync(Id);
+            if (Movie == null) return NotFound();
 
-            NewReview.MovieId = id;
+            // Bind MovieId manually to ensure correct binding
+            NewReview.MovieId = Id;
             NewReview.UserId = user.Id;
             NewReview.CreatedAt = DateTime.UtcNow;
+
+            if (string.IsNullOrWhiteSpace(NewReview.Content))
+            {
+                ModelState.AddModelError("NewReview.Content", "Content cannot be empty.");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                Reviews = await _context.MovieReviews
+                    .Include(r => r.Reactions)
+                    .Where(r => r.MovieId == Id)
+                    .OrderByDescending(r => r.CreatedAt)
+                    .ToListAsync();
+                return Page();
+            }
 
             _context.MovieReviews.Add(NewReview);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage(new { id });
-        }
-
-        // Handle like/dislike
-        public async Task<IActionResult> OnPostReactAsync(int reviewId, bool isLike)
-        {
-            var user = await _userManager.GetUserAsync(User);
-            if (user == null) return Challenge();
-
-            var existing = await _context.ReviewReactions
-                .FirstOrDefaultAsync(r => r.ReviewId == reviewId && r.UserId == user.Id);
-
-            if (existing == null)
-            {
-                _context.ReviewReactions.Add(new ReviewReaction
-                {
-                    ReviewId = reviewId,
-                    UserId = user.Id,
-                    IsLike = isLike
-                });
-            }
-            else
-            {
-                // Toggle or update
-                if (existing.IsLike == isLike)
-                    _context.ReviewReactions.Remove(existing);
-                else
-                    existing.IsLike = isLike;
-            }
-
-            await _context.SaveChangesAsync();
-            var review = await _context.MovieReviews.FindAsync(reviewId);
-            return RedirectToPage(new { id = review?.MovieId });
+            return RedirectToPage(new { Id });
         }
     }
 }

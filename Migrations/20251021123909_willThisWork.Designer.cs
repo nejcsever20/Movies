@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Movies.Data;
 
@@ -10,9 +11,11 @@ using Movies.Data;
 namespace Movies.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251021123909_willThisWork")]
+    partial class willThisWork
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.11");
@@ -445,16 +448,12 @@ namespace Movies.Migrations
 
                     b.Property<string>("Content")
                         .IsRequired()
-                        .HasMaxLength(1000)
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("TEXT");
 
                     b.Property<int>("MovieId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("ParentCommentId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("UserId")
@@ -464,8 +463,6 @@ namespace Movies.Migrations
                     b.HasKey("MovieCommentId");
 
                     b.HasIndex("MovieId");
-
-                    b.HasIndex("ParentCommentId");
 
                     b.HasIndex("UserId");
 
@@ -640,7 +637,7 @@ namespace Movies.Migrations
                     b.Property<bool>("IsLike")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("MovieReviewId")
+                    b.Property<int>("ReviewId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("UserId")
@@ -648,7 +645,7 @@ namespace Movies.Migrations
 
                     b.HasKey("ReviewReactionId");
 
-                    b.HasIndex("MovieReviewId");
+                    b.HasIndex("ReviewId");
 
                     b.HasIndex("UserId");
 
@@ -806,10 +803,6 @@ namespace Movies.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Movies.Models.MovieComment", "ParentComment")
-                        .WithMany("Replies")
-                        .HasForeignKey("ParentCommentId");
-
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
@@ -817,8 +810,6 @@ namespace Movies.Migrations
                         .IsRequired();
 
                     b.Navigation("Movie");
-
-                    b.Navigation("ParentComment");
 
                     b.Navigation("User");
                 });
@@ -910,9 +901,9 @@ namespace Movies.Migrations
 
             modelBuilder.Entity("Movies.Models.ReviewReaction", b =>
                 {
-                    b.HasOne("Movies.Models.MovieReview", "MovieReview")
+                    b.HasOne("Movies.Models.MovieReview", "Review")
                         .WithMany("Reactions")
-                        .HasForeignKey("MovieReviewId")
+                        .HasForeignKey("ReviewId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -920,7 +911,7 @@ namespace Movies.Migrations
                         .WithMany()
                         .HasForeignKey("UserId");
 
-                    b.Navigation("MovieReview");
+                    b.Navigation("Review");
 
                     b.Navigation("User");
                 });
@@ -975,8 +966,6 @@ namespace Movies.Migrations
             modelBuilder.Entity("Movies.Models.MovieComment", b =>
                 {
                     b.Navigation("Likes");
-
-                    b.Navigation("Replies");
                 });
 
             modelBuilder.Entity("Movies.Models.MovieReview", b =>

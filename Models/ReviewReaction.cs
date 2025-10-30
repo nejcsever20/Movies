@@ -1,22 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.AspNetCore.Identity;
 
 namespace Movies.Models
 {
     public class ReviewReaction
     {
-        [Key]
-        public int ReactionId { get; set; }
-
-        [Required]
-        public int ReviewId { get; set; }
-
-        [Required]
-        public string UserId { get; set; } = string.Empty;
-
+        public int ReviewReactionId { get; set; }  // Primary key
+        public int MovieReviewId { get; set; }
+        public string? UserId { get; set; }
         public bool IsLike { get; set; }
 
-        [ForeignKey("ReviewId")]
-        public MovieReview? Review { get; set; }
+        public MovieReview MovieReview { get; set; }
+        public IdentityUser User { get; set; }
     }
 }

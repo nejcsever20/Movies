@@ -47,7 +47,7 @@
                 <div class="card h-100 shadow-sm">
 
                     <!-- Public details page -->
-                    <a asp-page="/Movie/Details" asp-route-id="@movie.MovieId" class="text-decoration-none text-dark">
+                    <a asp-page="/Admin/DetailsMovie" asp-route-id="@movie.MovieId" class="text-decoration-none text-dark">
                         @if (!string.IsNullOrEmpty(movie.ImagePath))
                         {
                             <img src="@movie.ImagePath" alt="@movie.Title" class="card-img-top" style="height: 250px; object-fit: cover;">
@@ -64,7 +64,7 @@
 
                     <div class="card-footer text-center bg-light d-flex flex-wrap justify-content-center gap-1">
                         <!-- Public Details -->
-                        <a asp-page="/Movie/Details" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-primary">
+                        <a asp-page="/Admin/DetailsMovie" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-primary">
                             Details
                         </a>
 

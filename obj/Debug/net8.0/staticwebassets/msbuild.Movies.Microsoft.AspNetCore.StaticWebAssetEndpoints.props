@@ -1,5 +1,17 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/Movies/css/custom.21frx5m91v.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\custom.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"21frx5m91v"},{"Name":"integrity","Value":"sha256-1hl/Z9bNPGNx3bFIryoQ/1Dbt4GKMJpTn0EKNbC2Gac="},{"Name":"label","Value":"_content/Movies/css/custom.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2162"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00221hl/Z9bNPGNx3bFIryoQ/1Dbt4GKMJpTn0EKNbC2Gac=\u0022"},{"Name":"Last-Modified","Value":"Tue, 04 Nov 2025 14:18:32 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Movies/css/custom.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\custom.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-1hl/Z9bNPGNx3bFIryoQ/1Dbt4GKMJpTn0EKNbC2Gac="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2162"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00221hl/Z9bNPGNx3bFIryoQ/1Dbt4GKMJpTn0EKNbC2Gac=\u0022"},{"Name":"Last-Modified","Value":"Tue, 04 Nov 2025 14:18:32 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Movies/css/site.c2tiyv64ts.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

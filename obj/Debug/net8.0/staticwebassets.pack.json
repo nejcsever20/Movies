@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\Movies.6dyknu5ict.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\css\\custom.css",
+      "PackagePath": "staticwebassets\\css\\custom.css"
+    },
+    {
       "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

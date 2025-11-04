@@ -21,7 +21,7 @@ namespace Movies.Pages.Movie
         [BindProperty] public MovieComment NewComment { get; set; } = new();
         [BindProperty] public MovieComment NewReply { get; set; } = new();
 
-        public Movies.Models.Movie Movie { get; set; }
+        public Movies.Models.Movie Movie { get; set; } = default!;
         public List<MovieComment> Comments { get; set; } = new();
 
         public async Task<IActionResult> OnGetAsync(int id)
@@ -29,18 +29,36 @@ namespace Movies.Pages.Movie
             Movie = await _context.Movies.FindAsync(id);
             if (Movie == null) return NotFound();
 
+            // Load top-level comments
             Comments = await _context.MovieComments
                 .Include(c => c.User)
                 .Include(c => c.Likes)
-                .Include(c => c.Replies)
-                    .ThenInclude(r => r.User)
-                .Include(c => c.Replies)
-                    .ThenInclude(r => r.Likes)
                 .Where(c => c.MovieId == id && c.ParentCommentId == null)
                 .OrderByDescending(c => c.CreatedAt)
                 .ToListAsync();
 
+            // Load all replies recursively
+            foreach (var comment in Comments)
+            {
+                await LoadReplies(comment);
+            }
+
             return Page();
+        }
+
+        private async Task LoadReplies(MovieComment parent)
+        {
+            parent.Replies = await _context.MovieComments
+                .Include(r => r.User)
+                .Include(r => r.Likes)
+                .Where(r => r.ParentCommentId == parent.MovieCommentId)
+                .OrderBy(r => r.CreatedAt)
+                .ToListAsync();
+
+            foreach (var reply in parent.Replies)
+            {
+                await LoadReplies(reply); // recursive load
+            }
         }
 
         public async Task<IActionResult> OnPostAsync(int id)
@@ -48,8 +66,9 @@ namespace Movies.Pages.Movie
             var user = await _userManager.GetUserAsync(User);
             if (user == null) return Challenge();
 
-            if (!ModelState.IsValid)
+            if (string.IsNullOrWhiteSpace(NewComment.Content))
             {
+                ModelState.AddModelError("NewComment.Content", "Comment cannot be empty.");
                 await OnGetAsync(id);
                 return Page();
             }
@@ -76,14 +95,11 @@ namespace Movies.Pages.Movie
                 return Page();
             }
 
-            var parentComment = await _context.MovieComments.FindAsync(parentId);
-            if (parentComment == null) return NotFound();
-
             var reply = new MovieComment
             {
                 Content = NewReply.Content,
                 CreatedAt = DateTime.UtcNow,
-                MovieId = parentComment.MovieId,
+                MovieId = id,
                 UserId = user.Id,
                 ParentCommentId = parentId
             };
@@ -99,20 +115,14 @@ namespace Movies.Pages.Movie
             var user = await _userManager.GetUserAsync(User);
             if (user == null) return Challenge();
 
-            var existing = await _context.CommentLikes
-                .FirstOrDefaultAsync(l => l.CommentId == commentId && l.UserId == user.Id);
+            var existing = await _context.CommentLikes.FirstOrDefaultAsync(l => l.CommentId == commentId && l.UserId == user.Id);
 
             if (existing != null)
             {
                 if (existing.IsLike == isLike)
-                {
                     _context.CommentLikes.Remove(existing);
-                }
                 else
-                {
                     existing.IsLike = isLike;
-                    _context.CommentLikes.Update(existing);
-                }
             }
             else
             {
@@ -133,14 +143,5 @@ namespace Movies.Pages.Movie
 
         public int GetLikesCount(MovieComment comment) => comment.Likes.Count(l => l.IsLike);
         public int GetDislikesCount(MovieComment comment) => comment.Likes.Count(l => !l.IsLike);
-
-        public async Task<string?> GetUserVoteAsync(MovieComment comment)
-        {
-            var user = await _userManager.GetUserAsync(User);
-            if (user == null) return null;
-
-            var vote = comment.Likes.FirstOrDefault(l => l.UserId == user.Id);
-            return vote == null ? null : (vote.IsLike ? "like" : "dislike");
-        }
     }
 }

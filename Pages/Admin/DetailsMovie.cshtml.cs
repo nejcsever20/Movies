@@ -7,7 +7,7 @@ using Movies.Models;
 
 namespace Movies.Pages.Admin
 {
-    [Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin, Viewer")]
     public class DetailsMovieModel : PageModel
     {
         private readonly ApplicationDbContext _context;

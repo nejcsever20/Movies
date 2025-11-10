@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\custom.css"
     },
     {
+      "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\css\\logout.css",
+      "PackagePath": "staticwebassets\\css\\logout.css"
+    },
+    {
       "Id": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

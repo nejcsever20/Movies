@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2cVeNLo/P1dlqzU5B2ynUTLGTtM6dYtHzsDTAs2YrGU=",
+  "Hash": "gW/0lRoCr5qJ9AXXozmj5V5qdShLYANigw7gXoG7AFs=",
   "Source": "Movies",
   "BasePath": "_content/Movies",
   "Mode": "Default",
@@ -1333,11 +1333,32 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "21frx5m91v",
-      "Integrity": "1hl/Z9bNPGNx3bFIryoQ/1Dbt4GKMJpTn0EKNbC2Gac=",
+      "Fingerprint": "z2ibqwnpex",
+      "Integrity": "S7q3Qo3+EAEczwpIrsd/iETagV2nnp/LEdXwBeoAS+Q=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\custom.css"
+    },
+    {
+      "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\css\\logout.css",
+      "SourceId": "Movies",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\",
+      "BasePath": "_content/Movies",
+      "RelativePath": "css/logout#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zx3jv1ymz5",
+      "Integrity": "SaIcnCSEmwWnwCIxoQzpsP4bIUAKa4mfcmM/PUlVKW4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\logout.css"
     },
     {
       "Identity": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\css\\site.css",
@@ -3505,51 +3526,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/custom.21frx5m91v.css",
-      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\css\\custom.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2162"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"1hl/Z9bNPGNx3bFIryoQ/1Dbt4GKMJpTn0EKNbC2Gac=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 04 Nov 2025 14:18:32 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "21frx5m91v"
-        },
-        {
-          "Name": "label",
-          "Value": "css/custom.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-1hl/Z9bNPGNx3bFIryoQ/1Dbt4GKMJpTn0EKNbC2Gac="
-        }
-      ]
-    },
-    {
       "Route": "css/custom.css",
       "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\css\\custom.css",
       "Selectors": [],
@@ -3560,7 +3536,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "2162"
+          "Value": "5708"
         },
         {
           "Name": "Content-Type",
@@ -3568,11 +3544,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"1hl/Z9bNPGNx3bFIryoQ/1Dbt4GKMJpTn0EKNbC2Gac=\""
+          "Value": "\"S7q3Qo3+EAEczwpIrsd/iETagV2nnp/LEdXwBeoAS+Q=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 04 Nov 2025 14:18:32 GMT"
+          "Value": "Wed, 05 Nov 2025 11:12:59 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3582,7 +3558,134 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-1hl/Z9bNPGNx3bFIryoQ/1Dbt4GKMJpTn0EKNbC2Gac="
+          "Value": "sha256-S7q3Qo3+EAEczwpIrsd/iETagV2nnp/LEdXwBeoAS+Q="
+        }
+      ]
+    },
+    {
+      "Route": "css/custom.z2ibqwnpex.css",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\css\\custom.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5708"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"S7q3Qo3+EAEczwpIrsd/iETagV2nnp/LEdXwBeoAS+Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 05 Nov 2025 11:12:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z2ibqwnpex"
+        },
+        {
+          "Name": "label",
+          "Value": "css/custom.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-S7q3Qo3+EAEczwpIrsd/iETagV2nnp/LEdXwBeoAS+Q="
+        }
+      ]
+    },
+    {
+      "Route": "css/logout.css",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\css\\logout.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4366"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SaIcnCSEmwWnwCIxoQzpsP4bIUAKa4mfcmM/PUlVKW4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 05 Nov 2025 11:22:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SaIcnCSEmwWnwCIxoQzpsP4bIUAKa4mfcmM/PUlVKW4="
+        }
+      ]
+    },
+    {
+      "Route": "css/logout.zx3jv1ymz5.css",
+      "AssetFile": "C:\\Users\\Uporabnik\\source\\repos\\Movies\\Movies\\wwwroot\\css\\logout.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4366"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SaIcnCSEmwWnwCIxoQzpsP4bIUAKa4mfcmM/PUlVKW4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 05 Nov 2025 11:22:56 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zx3jv1ymz5"
+        },
+        {
+          "Name": "label",
+          "Value": "css/logout.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SaIcnCSEmwWnwCIxoQzpsP4bIUAKa4mfcmM/PUlVKW4="
         }
       ]
     },

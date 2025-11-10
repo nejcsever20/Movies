@@ -1,4 +1,5 @@
 wwwroot\css\custom.css
+wwwroot\css\logout.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\images\actors\26622bc0-43e5-45dc-bb24-1f387dfcefb3.jpg

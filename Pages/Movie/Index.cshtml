@@ -6,11 +6,14 @@
 
 @{
     ViewData["Title"] = "Movies";
-    bool isAdmin = false;
 
-    if (SignInManager.IsSignedIn(User))
+    bool isAdmin = false;
+    var signedIn = SignInManager.IsSignedIn(User);
+    IdentityUser? currentUser = null;
+
+    if (signedIn)
     {
-        var currentUser = UserManager.GetUserAsync(User).Result;
+        currentUser = UserManager.GetUserAsync(User).Result;
         if (currentUser != null)
         {
             isAdmin = UserManager.IsInRoleAsync(currentUser, "Admin").Result;
@@ -43,10 +46,17 @@
     <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-3">
         @foreach (var movie in Model.MoviesList)
         {
+            bool liked = false;
+            bool watched = false;
+
+            if (currentUser != null)
+            {
+                liked = Model.UserLikedMovieAsync(currentUser.Id, movie.MovieId).Result;
+                watched = Model.UserWatchedMovieAsync(currentUser.Id, movie.MovieId).Result;
+            }
+
             <div class="col">
                 <div class="card h-100 shadow-sm">
-
-                    <!-- Public details page -->
                     <a asp-page="/Admin/DetailsMovie" asp-route-id="@movie.MovieId" class="text-decoration-none text-dark">
                         @if (!string.IsNullOrEmpty(movie.ImagePath))
                         {
@@ -63,22 +73,13 @@
                     </a>
 
                     <div class="card-footer text-center bg-light d-flex flex-wrap justify-content-center gap-1">
-                        <!-- Public Details -->
-                        <a asp-page="/Admin/DetailsMovie" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-primary">
-                            Details
-                        </a>
 
-                        <!-- Comments -->
-                        <a asp-page="/Movie/Comments" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-info">
-                            Comments
-                        </a>
+                        <!-- Details / Comments / Reviews -->
+                        <a asp-page="/Admin/DetailsMovie" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-primary">Details</a>
+                        <a asp-page="/Movie/Comments" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-info">Comments</a>
+                        <a asp-page="/Movie/Reviews" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-secondary">User Reviews</a>
 
-                        <!-- User Reviews -->
-                        <a asp-page="/Movie/Reviews" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-secondary">
-                            User Reviews
-                        </a>
-
-                        <!-- Trailer Button -->
+                        <!-- Trailer -->
                         @if (!string.IsNullOrEmpty(movie.TrailerUrl))
                         {
                             <button class="btn btn-sm btn-outline-dark"
@@ -90,42 +91,44 @@
                             </button>
                         }
 
-                        <!-- Watchlist + Likes (signed-in users only) -->
-                        @if (SignInManager.IsSignedIn(User))
+                        <!-- Signed-in user actions -->
+                        @if (currentUser != null)
                         {
-                            var currentUser = await UserManager.GetUserAsync(User);
-                            bool userLiked = await Model.UserLikedMovieAsync(currentUser.Id, movie.MovieId);
-
                             <!-- Add to Watchlist -->
                             <form method="post" asp-page-handler="AddToWatchlist" class="d-inline">
                                 <input type="hidden" name="movieId" value="@movie.MovieId" />
-                                <button type="submit" class="btn btn-sm btn-outline-success">
-                                    Add to Watchlist
-                                </button>
+                                <button type="submit" class="btn btn-sm btn-outline-success">Add to Watchlist</button>
                             </form>
 
-                            <!-- Like / Unlike -->
-                            <form method="post" class="d-inline" asp-page-handler="@(userLiked ? "RemoveLike" : "LikeMovie")">
+                            <!-- Like/Unlike -->
+                            <form method="post" class="d-inline" asp-page-handler="@(liked ? "RemoveLike" : "LikeMovie")">
                                 <input type="hidden" name="movieId" value="@movie.MovieId" />
                                 <button type="submit" class="btn btn-sm btn-outline-warning">
-                                    ⭐ @await Model.GetLikesCountAsync(movie.MovieId)
+                                    ⭐ @Model.GetLikesCountAsync(movie.MovieId).Result
                                 </button>
                             </form>
+
+                            <!-- Watched button -->
+                            @if (watched)
+                            {
+                                <span class="badge bg-success">Watched</span>
+                            }
+                            else
+                            {
+                                <form method="post" asp-page-handler="MarkWatched" class="d-inline">
+                                    <input type="hidden" name="movieId" value="@movie.MovieId" />
+                                    <button type="submit" class="btn btn-sm btn-outline-success">Watched</button>
+                                </form>
+                            }
                         }
 
-                        <!-- Admin-only controls -->
+                        <!-- Admin controls -->
                         @if (isAdmin)
                         {
-                            <a asp-page="/Admin/EditMovie" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-warning">
-                                Edit
-                            </a>
-
+                            <a asp-page="/Admin/EditMovie" asp-route-id="@movie.MovieId" class="btn btn-sm btn-outline-warning">Edit</a>
                             <form method="post" asp-page="/Admin/DetailsMovie" asp-page-handler="Delete" class="d-inline">
                                 <input type="hidden" name="id" value="@movie.MovieId" />
-                                <button type="submit" class="btn btn-sm btn-outline-danger"
-                                        onclick="return confirm('Delete this movie?')">
-                                    Delete
-                                </button>
+                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Delete this movie?')">Delete</button>
                             </form>
                         }
                     </div>
@@ -140,10 +143,7 @@
             @for (int i = 1; i <= Model.TotalPages; i++)
             {
                 <li class="page-item @(i == Model.PageNumber ? "active" : "")">
-                    <a class="page-link"
-                       asp-page="/Movie/Index"
-                       asp-route-pageNumber="@i"
-                       asp-route-SearchTerm="@Model.SearchTerm">@i</a>
+                    <a class="page-link" asp-page="/Movie/Index" asp-route-pageNumber="@i" asp-route-SearchTerm="@Model.SearchTerm">@i</a>
                 </li>
             }
         </ul>
@@ -160,7 +160,7 @@
             </div>
             <div class="modal-body text-center">
                 <div class="ratio ratio-16x9">
-                    <iframe id="trailerIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe id="trailerIframe" src="" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -180,15 +180,10 @@
             modalTitle.textContent = movieTitle + " - Trailer";
 
             if (trailerUrl.includes("youtube.com") || trailerUrl.includes("youtu.be")) {
-                if (trailerUrl.includes("watch?v=")) {
-                    trailerUrl = trailerUrl.replace("watch?v=", "embed/");
-                } else if (trailerUrl.includes("youtu.be/")) {
-                    trailerUrl = trailerUrl.replace("youtu.be/", "www.youtube.com/embed/");
-                }
+                if (trailerUrl.includes("watch?v=")) trailerUrl = trailerUrl.replace("watch?v=", "embed/");
+                else if (trailerUrl.includes("youtu.be/")) trailerUrl = trailerUrl.replace("youtu.be/", "www.youtube.com/embed/");
                 iframe.src = trailerUrl + "?autoplay=1&mute=1";
-            } else {
-                iframe.src = trailerUrl;
-            }
+            } else iframe.src = trailerUrl;
         });
 
         trailerModal.addEventListener('hidden.bs.modal', function () {

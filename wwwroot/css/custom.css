@@ -1,87 +1,188 @@
 ﻿/* ============================
-   custom.css for Movies App
-   Only applies in Custom Mode
+   custom.css - Movies App
+   Custom Theme (Dark Text & Modern Look)
+   Clean, readable, and maintainable
    ============================ */
 
+/* ----------------------------
+   CSS Variables
+---------------------------- */
 body.custom-mode {
-    --primary-color: #0C2B4E;
-    --secondary-color: #1A3D64;
-    --accent-color: #1D546C;
-    --background-color: #F4F4F4;
-    --text-color: #0C2B4E;
-    background-color: var(--background-color);
+    --primary-color: #0C2B4E; /* Deep Navy for Navbar & Footer */
+    --secondary-color: #1A3D64; /* Medium Blue for buttons hover */
+    --accent-color: #1D546C; /* Teal-Blue Accent for hover & highlights */
+    --background-color: #F4F4F4; /* Main page background */
+    --surface-color: #FFFFFF; /* Cards, modals, containers */
+    --text-color: #0C2B4E; /* Main text color */
+    --muted-text: #2E3C55; /* Secondary text */
+    --link-hover: #123A68; /* Links hover color */
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+    background: linear-gradient(145deg, #F4F4F4 0%, #A5C1D3 50%, #1D546C 100%) fixed;
     color: var(--text-color);
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    transition: all var(--transition-speed) ease;
 }
 
-    /* Links */
-    body.custom-mode a {
-        color: var(--accent-color);
-    }
-
-        body.custom-mode a:hover {
-            color: var(--secondary-color);
-        }
-
-    /* Buttons */
-    body.custom-mode button {
-        background-color: var(--accent-color);
-        color: #fff;
-        border: none;
-        padding: 0.5em 1em;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-        body.custom-mode button:hover {
-            opacity: 0.8;
-        }
-
-    /* Headers */
-    body.custom-mode h1,
-    body.custom-mode h2,
-    body.custom-mode h3,
-    body.custom-mode h4,
-    body.custom-mode h5,
-    body.custom-mode h6 {
-        color: var(--primary-color);
-    }
-
-    /* Cards */
-    body.custom-mode .card {
-        background-color: var(--background-color);
+    /* ----------------------------
+   Container & Main Layout
+---------------------------- */
+    body.custom-mode .container,
+    body.custom-mode main,
+    body.custom-mode .content-wrapper {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         color: var(--text-color);
-        border-radius: 10px;
-        padding: 1em;
-        box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
-        margin: 1em 0;
     }
 
-    /* Inputs */
-    body.custom-mode input,
-    body.custom-mode textarea {
-        border: 1px solid var(--secondary-color);
-        background-color: var(--background-color);
-        color: var(--text-color);
-        padding: 0.5em;
-        border-radius: 5px;
-    }
-
-        body.custom-mode input:focus,
-        body.custom-mode textarea:focus {
-            outline: 2px solid var(--accent-color);
-        }
-
-    /* Navbar */
+    /* ----------------------------
+   Navbar
+---------------------------- */
     body.custom-mode .navbar {
-        background-color: var(--primary-color);
-        color: #fff;
+        background-color: var(--primary-color) !important;
+        color: var(--text-color) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     }
 
-        body.custom-mode .navbar a {
-            color: #fff;
+        body.custom-mode .navbar a,
+        body.custom-mode .navbar .nav-link,
+        body.custom-mode .navbar .navbar-brand,
+        body.custom-mode .navbar .dropdown-item {
+            color: var(--text-color) !important;
+            font-weight: 500;
+            transition: color var(--transition-speed) ease;
         }
 
-            body.custom-mode .navbar a:hover {
-                color: var(--secondary-color);
+            body.custom-mode .navbar a:hover,
+            body.custom-mode .navbar .nav-link:hover,
+            body.custom-mode .navbar .dropdown-item:hover {
+                color: var(--accent-color) !important;
             }
+
+/* Dropdown Submenu */
+.dropdown-submenu {
+    position: relative;
+}
+
+    .dropdown-submenu > .dropdown-menu {
+        top: 0;
+        left: 100%;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+    }
+
+/* ----------------------------
+   Buttons
+---------------------------- */
+body.custom-mode button,
+body.custom-mode .btn {
+    background-color: var(--accent-color) !important;
+    color: #fff !important;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.2rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition-speed) ease;
+}
+
+    body.custom-mode button:hover,
+    body.custom-mode .btn:hover {
+        background-color: var(--secondary-color) !important;
+        transform: translateY(-2px);
+    }
+
+/* ----------------------------
+   Cards
+---------------------------- */
+body.custom-mode .card {
+    background-color: var(--surface-color) !important;
+    color: var(--text-color) !important;
+    border-radius: var(--border-radius);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+    body.custom-mode .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+    }
+
+/* ----------------------------
+   Forms & Inputs
+---------------------------- */
+body.custom-mode input,
+body.custom-mode textarea,
+body.custom-mode select {
+    background-color: #fff !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--secondary-color) !important;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+    body.custom-mode input:focus,
+    body.custom-mode textarea:focus,
+    body.custom-mode select:focus {
+        border-color: var(--accent-color) !important;
+        box-shadow: 0 0 0 0.25rem rgba(29, 84, 108, 0.2);
+        outline: none;
+    }
+
+/* ----------------------------
+   Footer
+---------------------------- */
+body.custom-mode footer {
+    background-color: var(--primary-color) !important;
+    color: var(--text-color) !important;
+    padding: 1.2rem 0;
+    text-align: center;
+    box-shadow: 0px -2px 6px rgba(0, 0, 0, 0.2);
+    font-weight: 500;
+}
+
+/* ----------------------------
+   Pagination & Modals
+---------------------------- */
+body.custom-mode .pagination .page-item.active .page-link {
+    background-color: var(--accent-color) !important;
+    color: #fff !important;
+    border-radius: 6px;
+}
+
+body.custom-mode .modal-content {
+    background-color: var(--surface-color) !important;
+    color: var(--text-color) !important;
+    border-radius: var(--border-radius);
+    animation: fadeIn 0.4s ease;
+    padding: 1.5rem;
+}
+
+/* ----------------------------
+   Hover Effects
+---------------------------- */
+a:hover,
+.btn:hover {
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ----------------------------
+   Animations
+---------------------------- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

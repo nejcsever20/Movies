@@ -38,6 +38,10 @@ namespace Movies.Data
 
         public DbSet<MovieReview> MovieReviews { get; set; }
         public DbSet<ReviewReaction> ReviewReactions { get; set; }
+        public DbSet<UserProgress> UserProgresses { get; set; }
+        public DbSet<Award> Awards { get; set; }
+        public DbSet<UserAward> UserAwards { get; set; }
+        public DbSet<UserWatchedMovie> UserWatchedMovies { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -97,6 +101,32 @@ namespace Movies.Data
                 .HasOne(r => r.User)
                 .WithMany()
                 .HasForeignKey(r => r.UserId);
+
+            // Optional: configure relationships if needed
+            builder.Entity<UserProgress>()
+                .HasOne(up => up.User)
+                .WithMany()
+                .HasForeignKey(up => up.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<UserAward>()
+                .HasOne(ua => ua.User)
+                .WithMany() // IdentityUser does not have a collection by default
+                .HasForeignKey(ua => ua.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<UserAward>()
+                .HasOne(ua => ua.Award)
+                .WithMany(a => a.UserAwards)
+                .HasForeignKey(ua => ua.AwardId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Entity<UserWatchedMovie>()
+                .HasKey(uw => uw.Id);
+
+            builder.Entity<UserWatchedMovie>()
+                   .HasIndex(uw => new { uw.UserId, uw.MovieId })
+                   .IsUnique();
         }
     }
 }

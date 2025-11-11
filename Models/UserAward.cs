@@ -7,14 +7,21 @@ namespace Movies.Models
     public class UserAward
     {
         public int Id { get; set; }
-        public string UserId { get; set; } = string.Empty;
-        public int AwardId { get; set; }
-        public DateTime DateEarned { get; set; } = DateTime.Now;
 
-        // Navigation properties
+        // Identity User ID
+        public string UserId { get; set; } = string.Empty;
+
+        // Award ID
+        public int AwardId { get; set; }
+
+        // When user earned this award
+        public DateTime DateEarned { get; set; } = DateTime.UtcNow;
+
+        // Navigation - Identity user
         [ForeignKey(nameof(UserId))]
         public virtual IdentityUser? User { get; set; }
 
+        // Navigation - Award object
         [ForeignKey(nameof(AwardId))]
         public virtual Award? Award { get; set; }
     }

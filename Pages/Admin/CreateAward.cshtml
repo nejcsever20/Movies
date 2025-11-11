@@ -1,0 +1,59 @@
+﻿@page
+@model Movies.Pages.Admin.CreateAwardModel
+@using Movies.Models
+@{
+    ViewData["Title"] = "Create Award";
+}
+
+<div class="container mt-4">
+    <h2>Create Award</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label asp-for="Award.Name" class="form-label"></label>
+            <input asp-for="Award.Name" class="form-control" />
+            <span asp-validation-for="Award.Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Award.Description" class="form-label"></label>
+            <textarea asp-for="Award.Description" class="form-control"></textarea>
+            <span asp-validation-for="Award.Description" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Award Icon</label>
+            <input asp-for="IconFile" type="file" class="form-control" />
+            <span asp-validation-for="IconFile" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Award.RequirementLevel" class="form-label"></label>
+            <input asp-for="Award.RequirementLevel" class="form-control" />
+            <span asp-validation-for="Award.RequirementLevel" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Award.HowToUnlock" class="form-label"></label>
+            <textarea asp-for="Award.HowToUnlock" class="form-control"></textarea>
+            <span asp-validation-for="Award.HowToUnlock" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Award.Rarity" class="form-label"></label>
+            <select asp-for="Award.Rarity" class="form-select">
+                <option>Common</option>
+                <option>Rare</option>
+                <option>Epic</option>
+                <option>Legendary</option>
+            </select>
+            <span asp-validation-for="Award.Rarity" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-success">Create Award</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Movies.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class iniCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -73,7 +73,10 @@ namespace Movies.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false),
                     Description = table.Column<string>(type: "TEXT", nullable: false),
-                    IconUrl = table.Column<string>(type: "TEXT", nullable: false)
+                    IconUrl = table.Column<string>(type: "TEXT", nullable: false),
+                    RequirementLevel = table.Column<int>(type: "INTEGER", nullable: false),
+                    HowToUnlock = table.Column<string>(type: "TEXT", nullable: false),
+                    Rarity = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

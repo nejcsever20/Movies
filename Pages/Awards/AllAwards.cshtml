@@ -1,0 +1,62 @@
+﻿@page
+@using Movies.Data
+@using Movies.Models
+@model Movies.Pages.Awards.AllAwardsModel
+
+@{
+    ViewData["Title"] = "All Awards";
+
+    // Get user's XP and level
+    int userXP = Model.Progress?.XP ?? 0;
+    int userLevel = Model.Progress?.Level ?? 1;
+}
+
+<div class="container mt-4">
+    <h2>All Awards</h2>
+
+    <div class="row row-cols-2 row-cols-md-4 g-3">
+        @foreach (var award in Model.AllAwards)
+        {
+            bool hasAward = Model.UserAwardIds.Contains(award.Id);
+
+            int progressPercent = hasAward ? 100 : (int)((userXP / (double)award.RequirementLevel) * 100);
+            if (progressPercent > 100) progressPercent = 100;
+
+            <div class="col">
+                <div class="card text-center h-100 p-2 position-relative @(hasAward ? "" : "border-secondary opacity-50")"
+                     data-bs-toggle="tooltip"
+                     title="Required Level: @award.RequirementLevel
+How to Unlock: @award.HowToUnlock
+Progress: @progressPercent%">
+                    <img src="@award.IconUrl" class="card-img-top mx-auto" style="height:80px; object-fit:contain;" />
+                    <div class="card-body">
+                        <h6 class="card-title">@award.Name</h6>
+                        <p>@award.Description</p>
+
+                        @if (hasAward)
+                        {
+                            <span class="badge bg-success">Unlocked</span>
+                        }
+                        else
+                        {
+                            <div class="progress mt-2" style="height: 10px;">
+                                <div class="progress-bar" role="progressbar" style="width: @progressPercent%;" aria-valuenow="@progressPercent" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <span class="badge bg-warning mt-1">Locked</span>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Enable Bootstrap tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl, { html: true })
+        })
+    </script>
+}

@@ -190,11 +190,31 @@
 
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-page="/Movie/Index">Movies</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-page="/Movie/Genres">Genres</a></li>
-                        <li class="nav-item"><a class="nav-link" asp-area="" asp-page="/Movie/Trailers">Trailers</a></li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="moviesDropdown" role="button" data-bs-toggle="dropdown">
+                                Movies
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="moviesDropdown">
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Movie/Index">All Movies</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Movie/Genres">Genres</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Movie/Trailers">Trailers</a></li>
+                            </ul>
+                        </li>
+
                         <li class="nav-item"><a class="nav-link" asp-area="" asp-page="/Actors/Actors">Actors</a></li>
                         <li class="nav-item"><a class="nav-link" asp-area="" asp-page="/Dashboard/Dashboard">Dashboard</a></li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="awardsDropdown" role="button" data-bs-toggle="dropdown">
+                                Awards
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="awardsDropdown">
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Awards/MyAwards">My Awards</a></li>
+                                <li><a class="dropdown-item" asp-area="" asp-page="/Awards/AllAwards">All Awards</a></li>
+                            </ul>
+                        </li>
+
                     </ul>
 
                     <!-- LOGIN / REGISTER OR USER DROPDOWN -->
@@ -210,7 +230,7 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                                     <li><a class="dropdown-item" asp-page="/Account/EditProfile">Edit Account</a></li>
-                                    <li><a class="dropdown-item" asp-page="/Account/NyProfile">My Profile</a>"</li>
+                                    <li><a class="dropdown-item" asp-page="/Account/MyProfile">My Profile</a>"</li>
 
                                     <li class="dropdown-submenu">
                                         <a class="dropdown-item dropdown-toggle" href="#">Watchlist</a>
@@ -330,5 +350,6 @@
     </script>
 
     @await RenderSectionAsync("Scripts", required: false)
+    @RenderSection("Styles", required: false)
 </body>
 </html>

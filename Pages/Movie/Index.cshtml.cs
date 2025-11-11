@@ -24,6 +24,7 @@ namespace Movies.Pages.Movie
 
         [BindProperty(SupportsGet = true)]
         public string? SearchTerm { get; set; }
+        public string? ReleaseDate { get; set; } // then parse manually in C#
 
         // GET: Movies list with pagination
         public async Task<IActionResult> OnGetAsync(int pageNumber = 1)
@@ -36,7 +37,8 @@ namespace Movies.Pages.Movie
             if (!string.IsNullOrWhiteSpace(SearchTerm))
                 query = query.Where(m => m.Title.Contains(SearchTerm));
 
-            query = query.OrderByDescending(m => m.ReleaseDate);
+            // Safe ordering: use MinValue for null ReleaseDate
+            query = query.OrderByDescending(m => m.ReleaseDate ?? DateTime.MinValue);
 
             int totalMovies = await query.CountAsync();
             TotalPages = (int)Math.Ceiling(totalMovies / (double)pageSize);
@@ -150,6 +152,38 @@ namespace Movies.Pages.Movie
         public async Task<bool> UserWatchedMovieAsync(string userId, int movieId)
         {
             return await _context.UserWatchedMovies.AnyAsync(w => w.UserId == userId && w.MovieId == movieId);
+        }
+
+        public async Task<IActionResult> OnPostUnmarkWatchedAsync(int movieId)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return Challenge();
+
+            var watchedRecord = await _context.UserWatchedMovies
+                .FirstOrDefaultAsync(w => w.UserId == user.Id && w.MovieId == movieId);
+
+            if (watchedRecord != null)
+            {
+                _context.UserWatchedMovies.Remove(watchedRecord);
+
+                // Optionally, subtract XP if you want
+                var movie = await _context.Movies.FindAsync(movieId);
+                if (movie != null)
+                {
+                    var progress = await _context.UserProgresses.FirstOrDefaultAsync(u => u.UserId == user.Id);
+                    if (progress != null)
+                    {
+                        progress.XP -= movie.RuntimeMinutes;
+                        if (progress.XP < 0) progress.XP = 0;
+                        progress.Level = (progress.XP / 100) + 1;
+                    }
+                }
+
+                await _context.SaveChangesAsync();
+            }
+
+            TempData["SuccessMessage"] = "Movie removed from watched list!";
+            return RedirectToPage();
         }
 
         // Award logic

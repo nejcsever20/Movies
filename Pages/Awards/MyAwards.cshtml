@@ -1,0 +1,109 @@
+﻿@page
+@model Movies.Pages.Awards.MyAwardsModel
+
+@{
+    ViewData["Title"] = "My Awards";
+}
+
+@section Styles {
+    <style>
+        .award-card {
+            transition: transform 0.3s;
+        }
+
+            .award-card:hover {
+                transform: scale(1.05);
+            }
+
+        /* Rarity Borders */
+        .rarity-Common {
+            border: 2px solid gray;
+        }
+
+        .rarity-Uncommon {
+            border: 2px solid green;
+        }
+
+        .rarity-Rare {
+            border: 2px solid blue;
+        }
+
+        .rarity-Epic {
+            border: 2px solid purple;
+        }
+
+        .rarity-Legendary {
+            border: 2px solid orange;
+        }
+
+        .rarity-Mythic {
+            border: 2px solid red;
+        }
+
+        .rarity-Divine {
+            border: 2px solid gold;
+        }
+
+        /* Unlock Animation */
+        .award-unlocked {
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        @@keyframes glow {
+            0%
+
+        {
+            box-shadow: 0 0 5px #fff;
+        }
+
+        100% {
+            box-shadow: 0 0 20px #ff0;
+        }
+
+        }
+    </style>
+}
+
+<div class="container mt-4">
+    <h2>My Awards</h2>
+
+    @if (!Model.UserAwards.Any())
+    {
+        <p>You haven't unlocked any awards yet. Keep watching movies!</p>
+    }
+    else
+    {
+        <div class="row row-cols-2 row-cols-md-4 g-3">
+            @foreach (var award in Model.UserAwards)
+            {
+                var rarityClass = "rarity-" + award.Rarity;
+                var isOwner = award.Name == "Owner";
+                <div class="col">
+                    <div class="card text-center h-100 p-2 award-card @(rarityClass) @(isOwner ? "award-unlocked" : "")"
+                         data-bs-toggle="tooltip"
+                         title="@award.HowToUnlock">
+                        <img src="@award.IconUrl" class="card-img-top mx-auto" style="height:80px; object-fit:contain;" />
+                        <div class="card-body">
+                            <h6 class="card-title">@award.Name</h6>
+                            <p class="card-text">@award.Description</p>
+                            @if (isOwner)
+                            {
+                                <span class="badge bg-warning">Owner</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        // Enable Bootstrap tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl, { html: true })
+        })
+    </script>
+}

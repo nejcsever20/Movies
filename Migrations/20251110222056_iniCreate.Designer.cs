@@ -11,8 +11,8 @@ using Movies.Data;
 namespace Movies.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20251110182335_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20251110222056_iniCreate")]
+    partial class iniCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -268,6 +268,10 @@ namespace Movies.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("HowToUnlock")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("IconUrl")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -275,6 +279,12 @@ namespace Movies.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("Rarity")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("RequirementLevel")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

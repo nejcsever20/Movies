@@ -265,6 +265,10 @@ namespace Movies.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("HowToUnlock")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("IconUrl")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -272,6 +276,12 @@ namespace Movies.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("Rarity")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("RequirementLevel")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 

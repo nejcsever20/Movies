@@ -4,6 +4,16 @@
 
 @{
     ViewData["Title"] = "My Profile";
+
+    // XP & Level calculations
+    int level = Model.Progress?.Level ?? 0;       // Start at 0
+    int xp = Model.Progress?.XP ?? 0;
+
+    // XP needed for next level
+    int xpNeeded = (level + 1) * 100;
+
+    // XP progress in current level
+    int xpProgress = xpNeeded > 0 ? Math.Min(100, ((xp % 100) * 100) / 100) : 0;
 }
 
 <div class="container mt-4">
@@ -31,6 +41,7 @@
         <!-- Profile Info -->
         <div class="tab-pane fade show active" id="info" role="tabpanel">
             <dl class="row">
+
                 <dt class="col-sm-3">Username</dt>
                 <dd class="col-sm-9">@Model.CurrentUser.UserName</dd>
 
@@ -38,10 +49,22 @@
                 <dd class="col-sm-9">@Model.CurrentUser.Email</dd>
 
                 <dt class="col-sm-3">XP</dt>
-                <dd class="col-sm-9">@((Model.Progress?.XP) ?? 0)</dd>
+                <dd class="col-sm-9">
+                    <div class="progress" style="height: 24px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-success"
+                             role="progressbar"
+                             style="width:@xpProgress%;"
+                             aria-valuenow="@xp"
+                             aria-valuemin="0"
+                             aria-valuemax="@xpNeeded">
+                            @xp / @xpNeeded XP
+                        </div>
+                    </div>
+                </dd>
 
                 <dt class="col-sm-3">Level</dt>
-                <dd class="col-sm-9">@((Model.Progress?.Level) ?? 1)</dd>
+                <dd class="col-sm-9">@level</dd>
+
             </dl>
         </div>
 
@@ -52,7 +75,8 @@
                 {
                     <div class="col">
                         <div class="card h-100">
-                            <img src="@(string.IsNullOrEmpty(movie.ImagePath) ? "/images/movies/default.jpg" : movie.ImagePath)" class="card-img-top" style="height:200px; object-fit:cover" />
+                            <img src="@(string.IsNullOrEmpty(movie.ImagePath) ? "/images/movies/default.jpg" : movie.ImagePath)"
+                                 class="card-img-top" style="height:200px; object-fit:cover" />
                             <div class="card-body">
                                 <h6 class="card-title">@movie.Title</h6>
                             </div>
@@ -69,7 +93,8 @@
                 {
                     <div class="col">
                         <div class="card h-100">
-                            <img src="@(string.IsNullOrEmpty(movie.ImagePath) ? "/images/movies/default.jpg" : movie.ImagePath)" class="card-img-top" style="height:200px; object-fit:cover" />
+                            <img src="@(string.IsNullOrEmpty(movie.ImagePath) ? "/images/movies/default.jpg" : movie.ImagePath)"
+                                 class="card-img-top" style="height:200px; object-fit:cover" />
                             <div class="card-body">
                                 <h6 class="card-title">@movie.Title</h6>
                             </div>
@@ -86,7 +111,8 @@
                 {
                     <div class="col">
                         <div class="card h-100">
-                            <img src="@(string.IsNullOrEmpty(movie.ImagePath) ? "/images/movies/default.jpg" : movie.ImagePath)" class="card-img-top" style="height:200px; object-fit:cover" />
+                            <img src="@(string.IsNullOrEmpty(movie.ImagePath) ? "/images/movies/default.jpg" : movie.ImagePath)"
+                                 class="card-img-top" style="height:200px; object-fit:cover" />
                             <div class="card-body">
                                 <h6 class="card-title">@movie.Title</h6>
                             </div>
@@ -103,10 +129,23 @@
                 {
                     <div class="col">
                         <div class="card text-center h-100 p-2">
-                            <img src="@award.IconUrl" class="card-img-top mx-auto" style="height:80px; width:auto; object-fit:contain;" />
+                            <img src="@award.IconUrl" class="card-img-top mx-auto"
+                                 style="height:80px; width:auto; object-fit:contain;" />
                             <div class="card-body">
                                 <h6 class="card-title">@award.Name</h6>
                                 <p class="card-text">@award.Description</p>
+                                <p class="small text-muted">Required Level: @award.RequirementLevel</p>
+                                <div class="progress mt-1" style="height: 8px;">
+                                    @{
+                                        int awardProgress = Math.Min(100, (xp * 100) / award.RequirementLevel);
+                                    }
+                                    <div class="progress-bar bg-info" role="progressbar"
+                                         style="width:@awardProgress%;"
+                                         aria-valuenow="@xp"
+                                         aria-valuemin="0"
+                                         aria-valuemax="@award.RequirementLevel">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

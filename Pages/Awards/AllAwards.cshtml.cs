@@ -19,10 +19,10 @@ namespace Movies.Pages.Awards
 
         public IList<Award> AllAwards { get; set; } = new List<Award>();
 
-        // IDs of awards the user has unlocked
+        // list of unlocked awards IDs
         public List<int> UserAwardIds { get; set; } = new List<int>();
 
-        // Current user progress
+        // user's progress (Level, XP)
         public UserProgress? Progress { get; set; }
 
         public async Task OnGetAsync()
@@ -41,6 +41,30 @@ namespace Movies.Pages.Awards
 
                     Progress = await _context.UserProgresses
                         .FirstOrDefaultAsync(p => p.UserId == user.Id);
+
+                    // Auto-unlock awards based on the user's progress
+                    if(Progress != null)
+                    {
+                        var newlyUnlocked = AllAwards
+                            .Where(a => !UserAwardIds.Contains(a.Id) && Progress.Level >= a.RequirementLevel)
+                            .ToList();
+
+                        foreach (var award in newlyUnlocked)
+                        {
+                            _context.UserAwards.Add(new UserAward
+                            {
+                                UserId = user.Id,
+                                AwardId = award.Id,
+                                DateEarned = DateTime.Now
+                            });
+                        }
+
+                        if (newlyUnlocked.Count > 0)
+                        {
+                            await _context.SaveChangesAsync();
+                            UserAwardIds.AddRange(newlyUnlocked.Select(a => a.Id));
+                        }
+                    }
                 }
             }
         }

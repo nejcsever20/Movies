@@ -5,9 +5,6 @@
 
 @{
     ViewData["Title"] = "All Awards";
-
-    // Get user's XP and level
-    int userXP = Model.Progress?.XP ?? 0;
     int userLevel = Model.Progress?.Level ?? 1;
 }
 
@@ -19,8 +16,13 @@
         {
             bool hasAward = Model.UserAwardIds.Contains(award.Id);
 
-            int progressPercent = hasAward ? 100 : (int)((userXP / (double)award.RequirementLevel) * 100);
-            if (progressPercent > 100) progressPercent = 100;
+            int requirement = Math.Max(1, award.RequirementLevel);
+
+            int progressPercent = hasAward ? 100 :
+            (int)((userLevel / (double)requirement) * 100);
+
+            if (progressPercent > 100)
+                progressPercent = 100;
 
             <div class="col">
                 <div class="card text-center h-100 p-2 position-relative @(hasAward ? "" : "border-secondary opacity-50")"
@@ -28,7 +30,10 @@
                      title="Required Level: @award.RequirementLevel
 How to Unlock: @award.HowToUnlock
 Progress: @progressPercent%">
-                    <img src="@award.IconUrl" class="card-img-top mx-auto" style="height:80px; object-fit:contain;" />
+                    <img src="@award.IconUrl"
+                         class="card-img-top mx-auto"
+                         style="height:80px; object-fit:contain;" />
+
                     <div class="card-body">
                         <h6 class="card-title">@award.Name</h6>
                         <p>@award.Description</p>
@@ -40,7 +45,12 @@ Progress: @progressPercent%">
                         else
                         {
                             <div class="progress mt-2" style="height: 10px;">
-                                <div class="progress-bar" role="progressbar" style="width: @progressPercent%;" aria-valuenow="@progressPercent" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar"
+                                     role="progressbar"
+                                     style="width: @progressPercent%;"
+                                     aria-valuenow="@progressPercent"
+                                     aria-valuemin="0"
+                                     aria-valuemax="100"></div>
                             </div>
                             <span class="badge bg-warning mt-1">Locked</span>
                         }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Movies.Data;
+using Movies.Services;
 using OfficeOpenXml; // EPPlus
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,6 +24,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
 .AddRoles<IdentityRole>()
 .AddEntityFrameworkStores<ApplicationDbContext>();
 
+builder.Services.AddHttpClient<TmdbService>();
+builder.Services.AddSingleton<TmdbService>();
 builder.Services.AddRazorPages();
 var app = builder.Build();
 
